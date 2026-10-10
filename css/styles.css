@@ -5142,3 +5142,137 @@ body {
     }
 
 }
+
+/* =========================================================
+   HERO MOBILE FIX
+   Mejora visual de la portada en celular
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* HERO GENERAL */
+    #inicio.hero {
+        min-height: auto;
+        padding-top: 95px;
+        padding-bottom: 140px;
+    }
+
+    #inicio .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 22px;
+    }
+
+    /* TEXTO SUPERIOR */
+    #inicio .hero-tagline,
+    #inicio .hero-top-text,
+    #inicio .hero-kicker {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        margin-bottom: 14px;
+    }
+
+    /* TITULO PRINCIPAL */
+    #inicio .hero-title,
+    #inicio h1 {
+        font-size: clamp(52px, 15vw, 82px);
+        line-height: 0.90;
+        margin-bottom: 20px;
+    }
+
+    /* SUBTITULO ROJO/NEGRO */
+    #inicio .hero-highlight,
+    #inicio .hero-subtitle {
+        font-size: clamp(24px, 6.5vw, 34px);
+        line-height: 1.05;
+        margin-bottom: 18px;
+    }
+
+    /* PÁRRAFO */
+    #inicio .hero-description,
+    #inicio .hero-text,
+    #inicio p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 28px;
+        max-width: 100%;
+    }
+
+    /* BOTONES */
+    #inicio .hero-buttons,
+    #inicio .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+        margin-bottom: 28px;
+    }
+
+    #inicio .hero-buttons .btn,
+    #inicio .hero-actions .btn,
+    #inicio .hero-buttons a,
+    #inicio .hero-actions a {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 16px 18px;
+        font-size: 15px;
+    }
+
+    /* UBICACIÓN */
+    #inicio .hero-location,
+    #inicio .hero-info,
+    #inicio .hero-contact {
+        margin-top: 10px;
+        padding-top: 18px;
+        max-width: 100%;
+    }
+
+    #inicio .hero-location strong,
+    #inicio .hero-info strong,
+    #inicio .hero-contact strong {
+        font-size: 18px;
+    }
+
+    #inicio .hero-location span,
+    #inicio .hero-info span,
+    #inicio .hero-contact span,
+    #inicio .hero-location p,
+    #inicio .hero-info p,
+    #inicio .hero-contact p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* REDES FLOTANTES */
+    .social-floating {
+        left: 16px;
+        bottom: 18px;
+        flex-direction: row;
+        gap: 10px;
+        z-index: 995;
+    }
+
+    .social-floating-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 21px;
+        border-radius: 14px;
+    }
+
+    /* WHATSAPP */
+    .whatsapp-floating {
+        right: 16px;
+        bottom: 18px;
+        width: 56px;
+        height: 56px;
+    }
+
+    .whatsapp-floating i {
+        font-size: 1.55rem;
+    }
+
+    .whatsapp-floating span {
+        display: none;
+    }
+}
