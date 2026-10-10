@@ -1,10 +1,10 @@
 
+
 :root {
 
     --red: #ed1c24;
 
     --red-dark: #c3131a;
-
 
     --black: #050505;
 
@@ -12,36 +12,29 @@
 
     --black-3: #111111;
 
-
     --white: #ffffff;
 
     --off-white: #dededc;
-
 
     --gray: #a8a8a8;
 
     --gray-light: #d7d7d7;
 
-
     --border: rgba(255,255,255,.11);
-
 
     --title: "Anton", sans-serif;
 
     --body: "Roboto", sans-serif;
 
-
     --container: 1180px;
 
 }
-
 
 /* =========================================================
 
    RESET
 
 ========================================================= */
-
 
 * {
 
@@ -53,7 +46,6 @@
 
 }
 
-
 html {
 
     scroll-behavior: smooth;
@@ -61,7 +53,6 @@ html {
     scroll-padding-top: 75px;
 
 }
-
 
 body {
 
@@ -77,7 +68,6 @@ body {
 
 }
 
-
 img {
 
     display: block;
@@ -85,7 +75,6 @@ img {
     width: 100%;
 
 }
-
 
 a {
 
@@ -95,13 +84,11 @@ a {
 
 }
 
-
 ul {
 
     list-style: none;
 
 }
-
 
 button {
 
@@ -113,7 +100,6 @@ button {
 
 }
 
-
 .container {
 
     width: min(90%, var(--container));
@@ -121,7 +107,6 @@ button {
     margin: auto;
 
 }
-
 
 .section {
 
@@ -135,256 +120,383 @@ button {
 
 ========================================================= */
 
-
 /* CONTENEDOR PRINCIPAL */
+
 #inicio.hero {
+
     position: relative;
+
     isolation: isolate;
+
     overflow: hidden;
+
     background: #090909;
 
     width: 100%;
+
     min-height: 100vh;
+
     min-height: 100svh;
 
     display: flex;
+
     align-items: center;
 
     /* Quitar la imagen fija del CSS anterior */
+
     background-image: none;
+
 }
 
 /* CONTENEDOR DE LAS IMÁGENES */
+
 #inicio .hero-slideshow {
+
     position: absolute;
+
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     z-index: 0;
+
     overflow: hidden;
+
     pointer-events: none;
+
 }
 
 /* IMÁGENES DEL CARRUSEL */
+
 #inicio .hero-slide-bg {
+
     position: absolute;
+
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     background-size: cover;
+
     background-position: center center;
+
     background-repeat: no-repeat;
 
     opacity: 0;
+
     visibility: hidden;
 
     transition:
+
         opacity 1.2s ease-in-out,
+
         visibility 1.2s ease-in-out;
+
 }
 
 /* IMAGEN ACTIVA */
+
 #inicio .hero-slide-bg.active {
+
     opacity: 1;
+
     visibility: visible;
+
 }
 
 /* CAPA OSCURA PARA LEER EL TEXTO */
+
 #inicio .hero-overlay {
+
     position: absolute;
+
     inset: 0;
 
     z-index: 2;
 
     background:
+
         linear-gradient(
+
             90deg,
+
             rgba(0, 0, 0, 0.80),
+
             rgba(0, 0, 0, 0.45)
+
         ),
+
         linear-gradient(
+
             0deg,
+
             rgba(0, 0, 0, 0.40),
+
             transparent 60%
+
         );
 
     pointer-events: none;
+
 }
 
 /* CAPAS DEL CSS ORIGINAL */
+
 #inicio.hero::before {
+
     z-index: 1;
+
 }
 
 #inicio.hero::after {
+
     z-index: 2;
+
 }
 
 /* CONTENIDO DEL INICIO */
+
 #inicio .hero-content {
+
     position: relative;
+
     z-index: 5;
 
     width: 100%;
+
 }
 
 /* FLECHA INFERIOR */
+
 #inicio .scroll-down {
+
     position: absolute;
+
     z-index: 10;
+
 }
 
 /* ==========================================
+
    TABLETS
+
 ========================================== */
 
 @media (max-width: 900px) {
 
     #inicio.hero {
+
         min-height: 100svh;
+
     }
 
     #inicio .hero-slide-bg {
+
         background-position: center center;
+
     }
 
     #inicio .hero-content {
+
         padding: 130px 6% 90px;
+
     }
 
 }
 
 /* ==========================================
+
    CELULARES
+
 ========================================== */
 
 @media (max-width: 768px) {
 
     #inicio.hero {
+
         width: 100%;
+
         min-height: 100svh;
+
         background: #090909;
+
         background-image: none;
+
     }
 
     #inicio .hero-slideshow {
+
         position: absolute;
+
         inset: 0;
+
         width: 100%;
+
         height: 100%;
+
         z-index: 0;
+
     }
 
     #inicio .hero-slide-bg {
+
         width: 100%;
+
         height: 100%;
 
         background-size: cover;
+
         background-position: center center;
 
         opacity: 0;
+
     }
 
     #inicio .hero-slide-bg.active {
+
         opacity: 1;
+
         visibility: visible;
+
     }
 
     /* OSCURECER MÁS EL FONDO EN CELULAR */
+
     #inicio .hero-overlay {
+
         z-index: 2;
 
         background:
+
             linear-gradient(
+
                 180deg,
+
                 rgba(0, 0, 0, 0.45) 0%,
+
                 rgba(0, 0, 0, 0.55) 40%,
+
                 rgba(0, 0, 0, 0.85) 100%
+
             );
+
     }
 
     /* TEXTO ENCIMA DE LAS FOTOS */
+
     #inicio .hero-content {
+
         position: relative;
+
         z-index: 5;
 
         width: 100%;
+
         padding: 125px 6% 100px;
+
     }
 
     #inicio .hero h1 {
+
         font-size: clamp(3.5rem, 13vw, 5.5rem);
+
         line-height: 0.95;
+
     }
 
     #inicio .hero-tagline {
+
         font-size: clamp(1.4rem, 5vw, 2rem);
+
         margin-top: 25px;
+
     }
 
     #inicio .hero-description {
+
         font-size: 0.95rem;
+
         line-height: 1.6;
+
     }
 
     #inicio .hero-buttons {
+
         display: flex;
+
         flex-direction: column;
+
         gap: 12px;
+
     }
 
     #inicio .hero-buttons .btn {
+
         width: 100%;
+
         text-align: center;
+
         justify-content: center;
+
     }
 
     #inicio .hero-info {
+
         margin-top: 30px;
+
     }
 
 }
 
 /* ==========================================
+
    CELULARES PEQUEÑOS
+
 ========================================== */
 
 @media (max-width: 400px) {
 
     #inicio .hero-content {
+
         padding: 115px 20px 85px;
+
     }
 
     #inicio .hero h1 {
+
         font-size: clamp(3rem, 12vw, 4rem);
+
     }
 
     #inicio .hero-slide-bg {
+
         background-position: center;
+
     }
 
 }
 
 /* ACCESIBILIDAD */
+
 @media (prefers-reduced-motion: reduce) {
 
     #inicio .hero-slide-bg {
+
         transition: none;
+
     }
 
 }
-
 
 /* =========================================================
 
    HEADER
 
 ========================================================= */
-
 
 .header {
 
@@ -396,24 +508,19 @@ button {
 
     z-index: 1000;
 
-
     width: 100%;
-
 
     background: rgba(5,5,5,.86);
 
     backdrop-filter: blur(18px);
 
-
     border-bottom: 1px solid var(--border);
 
 }
 
-
 .navbar {
 
     min-height: 76px;
-
 
     display: flex;
 
@@ -421,31 +528,37 @@ button {
 
     justify-content: space-between;
 
-
     gap: 30px;
 
 }
 
-
 /* LOGO */
 
 /* Imagen del logo principal del header */
+
 .logo {
+
     display: flex;
+
     align-items: center;
+
     height: 100%;
+
     text-decoration: none;
+
 }
 
 .logo-img {
+
     display: block;
+
     width: auto;
+
     height: 90px;
+
     object-fit: contain;
+
 }
-
-
-
 
 .logo,
 
@@ -455,17 +568,13 @@ button {
 
     font-size: 1.65rem;
 
-
     line-height: 1;
 
-
     letter-spacing: 1px;
-
 
     white-space: nowrap;
 
 }
-
 
 .logo span,
 
@@ -473,26 +582,19 @@ button {
 
     display: inline-block;
 
-
     margin-left: 4px;
-
 
     color: var(--red);
 
-
     font-size: 1.15em;
 
-
     font-style: italic;
-
 
     transform: rotate(-5deg);
 
 }
 
-
 /* NAV */
-
 
 .nav-links {
 
@@ -500,61 +602,47 @@ button {
 
     align-items: center;
 
-
     gap: 25px;
 
 }
-
 
 .nav-links a {
 
     position: relative;
 
-
     color: #ddd;
-
 
     font-size: .72rem;
 
     font-weight: 900;
 
-
     letter-spacing: .6px;
 
-
     text-transform: uppercase;
-
 
     transition: .3s ease;
 
 }
-
 
 .nav-links a::after {
 
     content: "";
 
-
     position: absolute;
-
 
     left: 0;
 
     bottom: -9px;
 
-
     width: 0;
 
     height: 2px;
 
-
     background: var(--red);
-
 
     transition: .3s ease;
 
 }
-
 
 .nav-links a:hover,
 
@@ -564,7 +652,6 @@ button {
 
 }
 
-
 .nav-links a:hover::after,
 
 .nav-links a.active::after {
@@ -573,9 +660,7 @@ button {
 
 }
 
-
 /* BOTÓN NAV */
-
 
 .btn-nav {
 
@@ -583,63 +668,47 @@ button {
 
     align-items: center;
 
-
     gap: 8px;
-
 
     padding: 10px 16px;
 
-
     background: var(--red);
-
 
     border-radius: 3px;
 
-
     color: white;
-
 
     font-size: .73rem;
 
     font-weight: 900;
 
-
     text-transform: uppercase;
-
 
     transition: .3s;
 
 }
 
-
 .btn-nav:hover {
 
     background: var(--red-dark);
-
 
     transform: translateY(-2px);
 
 }
 
-
 /* MOBILE BUTTON */
-
 
 .menu-toggle {
 
     display: none;
 
-
     background: transparent;
 
-
     color: white;
-
 
     font-size: 1.5rem;
 
 }
-
 
 /* =========================================================
 
@@ -647,44 +716,33 @@ button {
 
 ========================================================= */
 
-
 .btn {
 
     display: inline-flex;
-
 
     align-items: center;
 
     justify-content: center;
 
-
     gap: 10px;
-
 
     min-height: 54px;
 
-
     padding: 14px 25px;
 
-
     border-radius: 3px;
-
 
     font-size: .78rem;
 
     font-weight: 900;
 
-
     letter-spacing: .6px;
 
-
     text-transform: uppercase;
-
 
     transition: .3s ease;
 
 }
-
 
 .btn:hover {
 
@@ -692,55 +750,43 @@ button {
 
 }
 
-
 .btn-primary {
 
     background: var(--red);
 
-
     color: white;
-
 
     box-shadow: 0 12px 35px rgba(237,28,36,.22);
 
 }
 
-
 .btn-primary:hover {
 
     background: var(--red-dark);
-
 
     box-shadow: 0 15px 40px rgba(237,28,36,.35);
 
 }
 
-
 .btn-secondary {
 
     background: rgba(255,255,255,.08);
 
-
     border: 1px solid rgba(255,255,255,.3);
 
-
     color: white;
-
 
     backdrop-filter: blur(8px);
 
 }
 
-
 .btn-secondary:hover {
 
     background: white;
 
-
     color: black;
 
 }
-
 
 /* =========================================================
 
@@ -748,53 +794,39 @@ button {
 
 ========================================================= */
 
-
 .hero {
 
     position: relative;
 
-
     min-height: 100vh;
-
 
     display: flex;
 
     align-items: center;
 
-
     overflow: hidden;
-
 
     background-image: url("../assets/img/gym-03.png");
 
-
     background-size: cover;
 
-
     background-position: center;
-
 
     background-repeat: no-repeat;
 
 }
 
-
 /* OVERLAY */
-
 
 .hero::before {
 
     content: "";
 
-
     position: absolute;
-
 
     inset: 0;
 
-
     z-index: 1;
-
 
     background:
 
@@ -814,14 +846,11 @@ button {
 
 }
 
-
 .hero::after {
 
     content: "";
 
-
     position: absolute;
-
 
     left: 0;
 
@@ -829,12 +858,9 @@ button {
 
     bottom: 0;
 
-
     z-index: 2;
 
-
     height: 230px;
-
 
     background:
 
@@ -850,17 +876,13 @@ button {
 
 }
 
-
 .hero-overlay {
 
     position: absolute;
 
-
     inset: 0;
 
-
     z-index: 2;
-
 
     background:
 
@@ -874,30 +896,23 @@ button {
 
         );
 
-
     pointer-events: none;
 
 }
 
-
 /* HERO CONTENT */
-
 
 .hero-content {
 
     position: relative;
 
-
     z-index: 5;
 
-
     width: 100%;
-
 
     padding: 140px 5% 100px;
 
 }
-
 
 .hero-inner {
 
@@ -905,9 +920,7 @@ button {
 
 }
 
-
 /* EYEBROW */
-
 
 .hero-eyebrow {
 
@@ -915,28 +928,21 @@ button {
 
     align-items: center;
 
-
     gap: 12px;
-
 
     margin-bottom: 18px;
 
-
     color: white;
-
 
     font-size: .72rem;
 
     font-weight: 900;
 
-
     letter-spacing: 2.5px;
-
 
     text-transform: uppercase;
 
 }
-
 
 .hero-eyebrow span {
 
@@ -944,90 +950,67 @@ button {
 
     height: 3px;
 
-
     background: var(--red);
 
 }
 
-
 /* HERO TITULO */
-
 
 .hero h1 {
 
     font-family: var(--title);
 
-
     font-size: clamp(4.8rem, 9vw, 8.8rem);
-
 
     font-weight: 400;
 
-
     line-height: .95;
-
 
     letter-spacing: 1px;
 
-
     text-transform: uppercase;
-
 
     text-shadow: 0 8px 30px rgba(0,0,0,.5);
 
 }
 
-
 .hero h1 strong {
 
     display: block;
 
-
     color: white;
-
 
     font-weight: 400;
 
 }
 
-
 .hero h1 em {
 
     display: inline-block;
 
-
     color: var(--red);
 
-
     font-style: italic;
-
 
     transform: rotate(-4deg);
 
 }
 
-
 /* TAGLINE */
-
 
 .hero-tagline {
 
     margin-top: 45px;
 
-
     font-family: var(--title);
-
 
     font-size: clamp(1.5rem,3vw,2.3rem);
 
-
     letter-spacing: 1px;
-
 
     line-height: 1.1;
 
 }
-
 
 .hero-tagline span {
 
@@ -1035,170 +1018,127 @@ button {
 
 }
 
-
 /* DESCRIPTCION */
-
 
 .hero-description {
 
     max-width: 570px;
 
-
     margin: 15px 0 30px;
-
 
     color: #e3e3e3;
 
-
     font-size: 1rem;
-
 
     line-height: 1.7;
 
 }
 
-
 /* BOTONES */
-
 
 .hero-buttons {
 
     display: flex;
 
-
     flex-wrap: wrap;
-
 
     gap: 12px;
 
 }
 
-
 /* HERO INFO */
-
 
 .hero-info {
 
     display: flex;
 
-
     gap: 40px;
-
 
     margin-top: 45px;
 
-
     padding-top: 25px;
 
-
     border-top: 1px solid rgba(255,255,255,.16);
-
 
     max-width: 600px;
 
 }
 
-
 .hero-info > div {
 
     display: flex;
 
-
     align-items: center;
-
 
     gap: 13px;
 
 }
 
-
 .hero-info i {
 
     color: var(--red);
-
 
     font-size: 1.15rem;
 
 }
 
-
 .hero-info span {
 
     display: flex;
 
-
     flex-direction: column;
 
-
     font-size: .84rem;
-
 
     font-weight: 700;
 
 }
 
-
 .hero-info small {
 
     color: #999;
 
-
     font-size: .58rem;
 
-
     letter-spacing: 1.5px;
-
 
     font-weight: 900;
 
 }
 
-
 /* SCROLL */
-
 
 .scroll-down {
 
     position: absolute;
 
-
     z-index: 10;
-
 
     left: 50%;
 
     bottom: 25px;
 
-
     width: 40px;
 
     height: 40px;
 
-
     display: flex;
-
 
     align-items: center;
 
     justify-content: center;
 
-
     border: 1px solid rgba(255,255,255,.25);
-
 
     border-radius: 50%;
 
-
     transform: translateX(-50%);
-
 
     animation: bounce 2s infinite;
 
 }
 
-
 @keyframes bounce {
-
 
     0%,
 
@@ -1212,7 +1152,6 @@ button {
 
     }
 
-
     50% {
 
         transform:
@@ -1225,63 +1164,49 @@ button {
 
 }
 
-
 /* =========================================================
 
    INTRO STRIP
 
 ========================================================= */
 
-
 .intro-strip {
 
     position: relative;
 
-
     z-index: 20;
 
-
     background: var(--off-white);
-
 
     color: #111;
 
 }
 
-
 .intro-grid {
 
     min-height: 120px;
 
-
     display: grid;
-
 
     grid-template-columns: repeat(3,1fr);
 
 }
 
-
 .intro-item {
 
     display: flex;
-
 
     align-items: center;
 
     justify-content: center;
 
-
     gap: 18px;
 
-
     padding: 25px;
-
 
     border-right: 1px solid #d7d7d7;
 
 }
-
 
 .intro-item:last-child {
 
@@ -1289,52 +1214,41 @@ button {
 
 }
 
-
 .intro-item > span {
 
     color: var(--red);
 
-
     font-family: var(--title);
-
 
     font-size: 2rem;
 
 }
 
-
 .intro-item div {
 
     display: flex;
-
 
     flex-direction: column;
 
 }
 
-
 .intro-item strong {
 
     font-family: var(--title);
 
-
     font-size: 1.25rem;
-
 
     letter-spacing: 1px;
 
 }
 
-
 .intro-item small {
 
     color: #777;
 
-
     font-size: .72rem;
 
 }
-
 
 /* =========================================================
 
@@ -1342,62 +1256,47 @@ button {
 
 ========================================================= */
 
-
 .section-label {
 
     margin-bottom: 10px;
 
-
     color: var(--red);
-
 
     font-size: .72rem;
 
     font-weight: 900;
 
-
     letter-spacing: 3px;
-
 
     text-transform: uppercase;
 
 }
-
 
 .section-title {
 
     margin-bottom: 25px;
 
-
     font-family: var(--title);
-
 
     font-size: clamp(2.7rem,5vw,4.4rem);
 
-
     font-weight: 400;
-
 
     line-height: 1;
 
-
     letter-spacing: .5px;
-
 
     text-transform: uppercase;
 
 }
 
-
 .section-title span {
 
     display: block;
 
-
     color: var(--red);
 
 }
-
 
 .section-heading.center {
 
@@ -1405,22 +1304,17 @@ button {
 
 }
 
-
 .section-description {
 
     max-width: 600px;
 
-
     margin: -10px auto 45px;
 
-
     color: var(--gray);
-
 
     text-align: center;
 
 }
-
 
 /* =========================================================
 
@@ -1428,68 +1322,51 @@ button {
 
 ========================================================= */
 
-
 .about {
 
     background: var(--off-white);
-
 
     color: #111;
 
 }
 
-
 .about-grid {
 
     display: grid;
 
-
     grid-template-columns: 1fr 1fr;
 
-
     gap: 85px;
-
 
     align-items: center;
 
 }
 
-
 /* IMAGE */
-
 
 .about-image {
 
     position: relative;
 
-
     height: 570px;
-
 
     overflow: hidden;
 
-
     border-radius: 4px;
-
 
     box-shadow: 0 25px 60px rgba(0,0,0,.18);
 
 }
 
-
 .about-image::before {
 
     content: "";
 
-
     position: absolute;
-
 
     z-index: 2;
 
-
     inset: 0;
-
 
     background:
 
@@ -1505,21 +1382,17 @@ button {
 
 }
 
-
 .about-image img {
 
     width: 100%;
 
     height: 100%;
 
-
     object-fit: cover;
-
 
     transition: transform .7s ease;
 
 }
-
 
 .about-image:hover img {
 
@@ -1527,30 +1400,23 @@ button {
 
 }
 
-
 .about-image-label {
 
     position: absolute;
 
-
     z-index: 4;
-
 
     left: 30px;
 
     bottom: 30px;
 
-
     display: flex;
 
-
     flex-direction: column;
-
 
     color: white;
 
 }
-
 
 .about-image-label span {
 
@@ -1558,27 +1424,21 @@ button {
 
     font-weight: 900;
 
-
     letter-spacing: 3px;
 
 }
-
 
 .about-image-label strong {
 
     font-family: var(--title);
 
-
     font-size: 2.5rem;
-
 
     font-weight: 400;
 
 }
 
-
 /* TEXT */
-
 
 .about .section-title {
 
@@ -1586,79 +1446,59 @@ button {
 
 }
 
-
 .about-text > p:not(.section-label) {
 
     margin-bottom: 16px;
-
 
     color: #666;
 
 }
 
-
 .about-text .about-lead {
 
     color: #222 !important;
 
-
     font-size: 1.1rem;
-
 
     font-weight: 700;
 
 }
 
-
 /* FEATURES */
-
 
 .about-features {
 
     display: flex;
 
-
     flex-wrap: wrap;
 
-
     gap: 12px;
-
 
     margin: 27px 0;
 
 }
 
-
 .about-features div {
 
     display: flex;
 
-
     align-items: center;
-
 
     gap: 8px;
 
-
     padding: 9px 13px;
-
 
     background: white;
 
-
     border: 1px solid #ddd;
-
 
     border-radius: 30px;
 
-
     font-size: .75rem;
-
 
     font-weight: 700;
 
 }
-
 
 .about-features i {
 
@@ -1666,36 +1506,27 @@ button {
 
 }
 
-
 /* LINK */
-
 
 .text-link {
 
     display: inline-flex;
 
-
     align-items: center;
-
 
     gap: 10px;
 
-
     color: var(--red);
-
 
     font-size: .75rem;
 
     font-weight: 900;
 
-
     letter-spacing: 1px;
-
 
     transition: .3s;
 
 }
-
 
 .text-link:hover {
 
@@ -1710,248 +1541,394 @@ Diseño maquinas
 ========================================================== */
 
 /* ==========================================
+
    ESTACIÓN FIT 19
+
    GALERÍA PREMIUM DE MÁQUINAS
+
 ========================================== */
 
 .machines-section {
+
     background:
+
         radial-gradient(
+
             circle at top center,
+
             #252525 0%,
+
             #111111 45%,
+
             #090909 100%
+
         );
+
     color: #ffffff;
+
     padding: 100px 20px;
+
     position: relative;
+
     overflow: hidden;
+
 }
 
 /* CONTENEDOR */
+
 .machines-container {
+
     max-width: 1200px;
+
     margin: 0 auto;
+
     position: relative;
+
     z-index: 1;
+
 }
 
 /* ENCABEZADO */
+
 .machines-heading {
+
     text-align: center;
+
     max-width: 750px;
+
     margin: 0 auto 55px;
+
 }
 
 .machines-heading h2 {
+
     font-family: 'Anton', sans-serif;
+
     font-size: clamp(36px, 5vw, 60px);
+
     font-weight: 400;
+
     line-height: 1.15;
+
     letter-spacing: 1px;
+
     margin-bottom: 22px;
+
     text-transform: uppercase;
+
 }
 
 .machines-heading h2 span {
+
     color: #e32b2b;
+
 }
 
 /* LÍNEA DECORATIVA */
+
 .machines-heading h2::after {
+
     content: "";
+
     display: block;
+
     width: 75px;
+
     height: 4px;
+
     background: #e32b2b;
+
     margin: 22px auto 0;
+
     border-radius: 10px;
+
 }
 
 .machines-heading p {
+
     color: #bdbdbd;
+
     max-width: 650px;
+
     margin: 0 auto;
+
     font-size: 16px;
+
     line-height: 1.8;
+
 }
 
 /* GALERÍA */
+
 .machines-grid {
+
     display: grid;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 28px;
+
 }
 
 /* TARJETAS */
+
 .machine-card {
+
     background: linear-gradient(
+
         145deg,
+
         #242424,
+
         #171717
+
     );
+
     border-radius: 16px;
+
     overflow: hidden;
+
     border: 1px solid #353535;
+
     position: relative;
 
     box-shadow:
+
         0 10px 30px rgba(0, 0, 0, 0.35);
 
     transition:
+
         transform 0.35s ease,
+
         box-shadow 0.35s ease,
+
         border-color 0.35s ease;
+
 }
 
 /* EFECTO HOVER */
+
 .machine-card:hover {
+
     transform: translateY(-8px);
+
     border-color: #e32b2b;
 
     box-shadow:
+
         0 20px 45px rgba(0, 0, 0, 0.55),
+
         0 0 25px rgba(227, 43, 43, 0.12);
+
 }
 
 /* CONTENEDOR VISUAL DE LA IMAGEN */
+
 .machine-card img {
+
     width: 100%;
+
     height: 380px;
+
     object-fit: contain;
+
     object-position: center;
+
     display: block;
 
     background: #141414;
 
     padding: 12px;
+
     box-sizing: border-box;
 
     transition:
+
         transform 0.45s ease,
+
         filter 0.45s ease;
+
 }
 
 /* ACERCAMIENTO SUAVE */
+
 .machine-card:hover img {
+
     transform: scale(1.025);
+
     filter: brightness(1.07);
+
 }
 
 /* TÍTULOS DE LAS MÁQUINAS */
+
 .machine-card h3 {
+
     margin: 0;
+
     padding: 24px 20px;
 
     background: linear-gradient(
+
         90deg,
+
         #222222,
+
         #171717
+
     );
 
     color: #ffffff;
+
     font-family: 'Roboto', sans-serif;
+
     font-size: 17px;
+
     font-weight: 900;
+
     text-align: center;
+
     letter-spacing: 1px;
+
     text-transform: uppercase;
 
     border-top: 3px solid #e32b2b;
 
     transition: color 0.3s ease;
+
 }
 
 /* TÍTULO AL PASAR EL CURSOR */
+
 .machine-card:hover h3 {
+
     color: #ff4747;
+
 }
 
 /* TABLETS */
+
 @media (max-width: 900px) {
 
     .machines-section {
+
         padding: 75px 20px;
+
     }
 
     .machines-grid {
+
         gap: 20px;
+
     }
 
     .machine-card img {
+
         height: 320px;
+
     }
 
 }
 
 /* CELULARES */
+
 @media (max-width: 768px) {
 
     .machines-section {
+
         padding: 65px 15px;
+
     }
 
     .machines-heading {
+
         margin-bottom: 35px;
+
     }
 
     .machines-heading h2 {
+
         font-size: clamp(32px, 8vw, 45px);
+
     }
 
     .machines-heading p {
+
         font-size: 15px;
+
     }
 
     .machines-grid {
+
         grid-template-columns: 1fr;
+
         gap: 25px;
+
     }
 
     .machine-card {
+
         border-radius: 12px;
+
     }
 
     .machine-card img {
+
         height: 310px;
+
         padding: 10px;
+
     }
 
     .machine-card h3 {
+
         padding: 20px 15px;
+
         font-size: 16px;
+
     }
 
 }
 
 /* PANTALLAS PEQUEÑAS */
+
 @media (max-width: 400px) {
 
     .machine-card img {
+
         height: 270px;
+
     }
 
 }
 
 /* ACCESIBILIDAD */
+
 @media (prefers-reduced-motion: reduce) {
 
     .machine-card,
+
     .machine-card img,
+
     .machine-card h3 {
+
         transition: none;
+
     }
 
     .machine-card:hover {
+
         transform: none;
+
     }
 
     .machine-card:hover img {
+
         transform: none;
+
     }
 
 }
-
 
 /* =========================================================
 
@@ -1959,11 +1936,9 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .services {
 
     position: relative;
-
 
     background:
 
@@ -1977,163 +1952,123 @@ Diseño maquinas
 
         url("../assets/img/gym-04.png");
 
-
     background-size: cover;
 
-
     background-position: center;
-
 
     background-attachment: fixed;
 
 }
 
-
 .services-grid {
 
     display: grid;
 
-
     grid-template-columns: repeat(3,1fr);
-
 
     gap: 20px;
 
 }
 
-
 .service-card {
 
     position: relative;
 
-
     min-height: 360px;
-
 
     display: flex;
 
-
     flex-direction: column;
-
 
     justify-content: center;
 
-
     padding: 45px 32px;
-
 
     overflow: hidden;
 
-
     background: rgba(255,255,255,.045);
 
-
     border: 1px solid var(--border);
-
 
     transition: .35s ease;
 
 }
 
-
 .service-card:hover {
 
     transform: translateY(-8px);
 
-
     background: rgba(255,255,255,.075);
-
 
     border-color: rgba(237,28,36,.5);
 
 }
 
-
 .service-number {
 
     position: absolute;
-
 
     right: 20px;
 
     top: 10px;
 
-
     color: rgba(255,255,255,.05);
 
-
     font-family: var(--title);
-
 
     font-size: 5.5rem;
 
 }
 
-
 .service-icon {
 
     margin-bottom: 25px;
 
-
     color: var(--red);
-
 
     font-size: 2.8rem;
 
 }
 
-
 .service-card h3 {
 
     margin-bottom: 15px;
 
-
     font-family: var(--title);
-
 
     font-size: 1.8rem;
 
-
     font-weight: 400;
-
 
     letter-spacing: 1px;
 
 }
 
-
 .service-card p {
 
     color: var(--gray);
-
 
     font-size: .9rem;
 
 }
 
-
 .service-line {
 
     position: absolute;
-
 
     bottom: 0;
 
     left: 0;
 
-
     width: 0;
 
     height: 4px;
 
-
     background: var(--red);
-
 
     transition: .4s;
 
 }
-
 
 .service-card:hover .service-line {
 
@@ -2141,27 +2076,21 @@ Diseño maquinas
 
 }
 
-
 /* =========================================================
 
    MOTIVATION BANNER
 
 ========================================================= */
 
-
 .motivation {
 
     position: relative;
 
-
     min-height: 520px;
-
 
     display: flex;
 
-
     align-items: center;
-
 
     background:
 
@@ -2169,19 +2098,15 @@ Diseño maquinas
 
         center / cover no-repeat;
 
-
     background-attachment: fixed;
 
 }
-
 
 .motivation-overlay {
 
     position: absolute;
 
-
     inset: 0;
-
 
     background:
 
@@ -2197,66 +2122,51 @@ Diseño maquinas
 
 }
 
-
 .motivation-content {
 
     position: relative;
-
 
     z-index: 3;
 
 }
 
-
 .motivation-content > span {
 
     color: var(--red);
-
 
     font-size: .7rem;
 
     font-weight: 900;
 
-
     letter-spacing: 3px;
 
 }
-
 
 .motivation h2 {
 
     max-width: 700px;
 
-
     margin: 10px 0 30px;
-
 
     font-family: var(--title);
 
-
     font-size: clamp(3.5rem,7vw,6.5rem);
 
-
     font-weight: 400;
-
 
     line-height: .95;
 
 }
 
-
 .motivation h2 strong {
 
     display: block;
 
-
     color: var(--red);
-
 
     font-weight: 400;
 
 }
-
 
 /* =========================================================
 
@@ -2264,13 +2174,11 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .gallery {
 
     background: var(--off-white);
 
     color: #111;
-
 
     /*
 
@@ -2284,31 +2192,25 @@ Diseño maquinas
 
 }
 
-
 /* =========================================================
 
    CABECERA
 
 ========================================================= */
 
-
 .gallery-heading {
 
     display: flex;
-
 
     justify-content: space-between;
 
     align-items: flex-end;
 
-
     gap: 50px;
-
 
     margin-bottom: 50px;
 
 }
-
 
 .gallery-heading .section-title {
 
@@ -2316,19 +2218,15 @@ Diseño maquinas
 
 }
 
-
 .gallery-heading > p {
 
     max-width: 390px;
 
-
     color: #777;
-
 
     line-height: 1.7;
 
 }
-
 
 /* =========================================================
 
@@ -2336,19 +2234,15 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .gym-carousel {
 
     position: relative;
 
-
     width: 100%;
-
 
     margin: 0;
 
 }
-
 
 /* =========================================================
 
@@ -2356,14 +2250,11 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .carousel-viewport {
 
     position: relative;
 
-
     width: 100%;
-
 
     /*
 
@@ -2373,17 +2264,13 @@ Diseño maquinas
 
     height: min(72vh, 760px);
 
-
     min-height: 600px;
 
-
     overflow: hidden;
-
 
     background: #111;
 
 }
-
 
 /* =========================================================
 
@@ -2391,11 +2278,9 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .carousel-track {
 
     position: relative;
-
 
     width: 100%;
 
@@ -2403,35 +2288,27 @@ Diseño maquinas
 
 }
 
-
 /* =========================================================
 
    SLIDES
 
 ========================================================= */
 
-
 .carousel-slide {
 
     position: absolute;
 
-
     inset: 0;
-
 
     width: 100%;
 
     height: 100%;
 
-
     opacity: 0;
-
 
     visibility: hidden;
 
-
     transform: scale(1.035);
-
 
     transition:
 
@@ -2443,19 +2320,15 @@ Diseño maquinas
 
 }
 
-
 .carousel-slide.active {
 
     opacity: 1;
 
-
     visibility: visible;
-
 
     transform: scale(1);
 
 }
-
 
 /* =========================================================
 
@@ -2463,29 +2336,23 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .carousel-slide {
 
     position: absolute;
 
     inset: 0;
 
-
     width: 100%;
 
     height: 100%;
 
-
     background: #0a0a0a;
-
 
     opacity: 0;
 
     visibility: hidden;
 
-
     transform: scale(1.01);
-
 
     transition:
 
@@ -2497,7 +2364,6 @@ Diseño maquinas
 
 }
 
-
 .carousel-slide.active {
 
     opacity: 1;
@@ -2508,23 +2374,19 @@ Diseño maquinas
 
 }
 
-
 .carousel-slide img {
 
     width: 100%;
 
     height: 100%;
 
-
     object-fit: contain;
 
     object-position: center;
 
-
     display: block;
 
 }
-
 
 /* =========================================================
 
@@ -2532,14 +2394,11 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .carousel-overlay {
 
     position: absolute;
 
-
     inset: 0;
-
 
     background:
 
@@ -2559,17 +2418,13 @@ Diseño maquinas
 
 }
 
-
 /* SOMBRA INFERIOR */
-
 
 .carousel-overlay::after {
 
     content: "";
 
-
     position: absolute;
-
 
     left: 0;
 
@@ -2577,9 +2432,7 @@ Diseño maquinas
 
     bottom: 0;
 
-
     height: 45%;
-
 
     background:
 
@@ -2595,21 +2448,17 @@ Diseño maquinas
 
 }
 
-
 /* =========================================================
 
    TEXTO
 
 ========================================================= */
 
-
 .carousel-caption {
 
     position: absolute;
 
-
     z-index: 4;
-
 
     /*
 
@@ -2627,65 +2476,47 @@ Diseño maquinas
 
     );
 
-
     bottom: 70px;
 
-
     max-width: 650px;
-
 
     color: white;
 
 }
 
-
 .carousel-caption > span {
 
     display: block;
 
-
     margin-bottom: 12px;
-
 
     color: var(--red);
 
-
     font-size: .68rem;
-
 
     font-weight: 900;
 
-
     letter-spacing: 2.8px;
-
 
     text-transform: uppercase;
 
 }
 
-
 .carousel-caption h3 {
 
     margin-bottom: 15px;
 
-
     font-family: var(--title);
-
 
     font-size: clamp(3rem, 5vw, 5.2rem);
 
-
     font-weight: 400;
-
 
     line-height: .95;
 
-
     letter-spacing: .5px;
 
-
     text-transform: uppercase;
-
 
     text-shadow:
 
@@ -2695,22 +2526,17 @@ Diseño maquinas
 
 }
 
-
 .carousel-caption p {
 
     max-width: 480px;
 
-
     color: #ddd;
 
-
     font-size: .95rem;
-
 
     line-height: 1.7;
 
 }
-
 
 /* =========================================================
 
@@ -2718,35 +2544,27 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .carousel-arrow {
 
     position: absolute;
 
-
     z-index: 10;
 
-
     top: 50%;
-
 
     width: 60px;
 
     height: 60px;
 
-
     display: flex;
-
 
     align-items: center;
 
     justify-content: center;
 
-
     background:
 
         rgba(0,0,0,.48);
-
 
     border:
 
@@ -2754,33 +2572,25 @@ Diseño maquinas
 
         rgba(255,255,255,.25);
 
-
     color: white;
-
 
     font-size: 1rem;
 
-
     backdrop-filter: blur(10px);
 
-
     transform: translateY(-50%);
-
 
     transition: .3s ease;
 
 }
 
-
 .carousel-arrow:hover {
 
     background: var(--red);
 
-
     border-color: var(--red);
 
 }
-
 
 .carousel-prev {
 
@@ -2788,13 +2598,11 @@ Diseño maquinas
 
 }
 
-
 .carousel-next {
 
     right: 30px;
 
 }
-
 
 /* =========================================================
 
@@ -2802,63 +2610,47 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .carousel-counter {
 
     position: absolute;
 
-
     z-index: 10;
-
 
     top: 30px;
 
     right: 30px;
 
-
     display: flex;
-
 
     align-items: center;
 
-
     gap: 10px;
 
-
     padding: 11px 16px;
-
 
     background:
 
         rgba(0,0,0,.55);
 
-
     color: #aaa;
-
 
     font-size: .68rem;
 
-
     font-weight: 900;
 
-
     letter-spacing: 1px;
-
 
     backdrop-filter: blur(10px);
 
 }
 
-
 .carousel-counter #carousel-current {
 
     color: white;
 
-
     font-size: .9rem;
 
 }
-
 
 .counter-line {
 
@@ -2866,11 +2658,9 @@ Diseño maquinas
 
     height: 1px;
 
-
     background: var(--red);
 
 }
-
 
 /* =========================================================
 
@@ -2878,24 +2668,19 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .carousel-navigation {
 
     min-height: 80px;
 
-
     display: flex;
-
 
     align-items: center;
 
     justify-content: space-between;
 
-
     gap: 30px;
 
 }
-
 
 /* =========================================================
 
@@ -2903,19 +2688,15 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .carousel-dots {
 
     display: flex;
 
-
     align-items: center;
-
 
     gap: 8px;
 
 }
-
 
 .carousel-dot {
 
@@ -2923,23 +2704,17 @@ Diseño maquinas
 
     height: 4px;
 
-
     padding: 0;
-
 
     border: 0;
 
-
     background: #aaa;
 
-
     cursor: pointer;
-
 
     transition: .3s ease;
 
 }
-
 
 .carousel-dot:hover {
 
@@ -2947,16 +2722,13 @@ Diseño maquinas
 
 }
 
-
 .carousel-dot.active {
 
     width: 55px;
 
-
     background: var(--red);
 
 }
-
 
 /* =========================================================
 
@@ -2964,22 +2736,17 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .carousel-help {
 
     color: #777;
 
-
     font-size: .58rem;
 
-
     font-weight: 900;
-
 
     letter-spacing: 2px;
 
 }
-
 
 /* =========================================================
 
@@ -2987,19 +2754,15 @@ Diseño maquinas
 
 ========================================================= */
 
-
 @media (max-width: 900px) {
-
 
     .gallery-heading {
 
         display: block;
 
-
         margin-bottom: 40px;
 
     }
-
 
     .gallery-heading > p {
 
@@ -3007,29 +2770,23 @@ Diseño maquinas
 
     }
 
-
     .carousel-viewport {
 
         height: 650px;
-
 
         min-height: 0;
 
     }
 
-
     .carousel-caption {
 
         left: 5%;
 
-
         bottom: 55px;
-
 
         max-width: 550px;
 
     }
-
 
     .carousel-caption h3 {
 
@@ -3037,13 +2794,11 @@ Diseño maquinas
 
     }
 
-
     .carousel-prev {
 
         left: 20px;
 
     }
-
 
     .carousel-next {
 
@@ -3051,9 +2806,7 @@ Diseño maquinas
 
     }
 
-
 }
-
 
 /* =========================================================
 
@@ -3061,9 +2814,7 @@ Diseño maquinas
 
 ========================================================= */
 
-
 @media (max-width: 600px) {
-
 
     .gallery {
 
@@ -3071,13 +2822,11 @@ Diseño maquinas
 
     }
 
-
     .gallery-heading {
 
         margin-bottom: 30px;
 
     }
-
 
     .carousel-viewport {
 
@@ -3089,21 +2838,17 @@ Diseño maquinas
 
         height: 70svh;
 
-
         min-height: 540px;
-
 
         max-height: 650px;
 
     }
-
 
     .carousel-slide img {
 
         object-position: center;
 
     }
-
 
     .carousel-overlay {
 
@@ -3123,7 +2868,6 @@ Diseño maquinas
 
     }
 
-
     .carousel-caption {
 
         left: 22px;
@@ -3132,46 +2876,37 @@ Diseño maquinas
 
         bottom: 35px;
 
-
         max-width: none;
 
     }
-
 
     .carousel-caption > span {
 
         font-size: .58rem;
 
-
         letter-spacing: 2px;
 
     }
-
 
     .carousel-caption h3 {
 
         font-size: 2.8rem;
 
-
         line-height: 1;
 
     }
-
 
     .carousel-caption p {
 
         max-width: 330px;
 
-
         font-size: .82rem;
 
     }
 
-
     .carousel-arrow {
 
         top: 43%;
-
 
         width: 46px;
 
@@ -3179,20 +2914,17 @@ Diseño maquinas
 
     }
 
-
     .carousel-prev {
 
         left: 10px;
 
     }
 
-
     .carousel-next {
 
         right: 10px;
 
     }
-
 
     .carousel-counter {
 
@@ -3202,25 +2934,19 @@ Diseño maquinas
 
     }
 
-
     .carousel-navigation {
 
         min-height: 95px;
 
-
         align-items: flex-start;
-
 
         justify-content: center;
 
-
         flex-direction: column;
-
 
         gap: 13px;
 
     }
-
 
     .carousel-dot {
 
@@ -3228,13 +2954,11 @@ Diseño maquinas
 
     }
 
-
     .carousel-dot.active {
 
         width: 40px;
 
     }
-
 
     .carousel-help {
 
@@ -3242,9 +2966,7 @@ Diseño maquinas
 
     }
 
-
 }
-
 
 /* =========================================================
 
@@ -3252,40 +2974,31 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .carousel-navigation {
 
     display: flex;
-
 
     align-items: center;
 
     justify-content: space-between;
 
-
     gap: 30px;
-
 
     padding-top: 22px;
 
 }
 
-
 /* DOTS */
-
 
 .carousel-dots {
 
     display: flex;
 
-
     align-items: center;
-
 
     gap: 8px;
 
 }
-
 
 .carousel-dot {
 
@@ -3293,23 +3006,17 @@ Diseño maquinas
 
     height: 4px;
 
-
     padding: 0;
-
 
     border: 0;
 
-
     background: #b7b7b7;
 
-
     cursor: pointer;
-
 
     transition: .3s ease;
 
 }
-
 
 .carousel-dot:hover {
 
@@ -3317,35 +3024,27 @@ Diseño maquinas
 
 }
 
-
 .carousel-dot.active {
 
     width: 55px;
-
 
     background: var(--red);
 
 }
 
-
 /* TEXTO INFERIOR */
-
 
 .carousel-help {
 
     color: #888;
 
-
     font-size: .58rem;
 
-
     font-weight: 900;
-
 
     letter-spacing: 2px;
 
 }
-
 
 /* =========================================================
 
@@ -3353,9 +3052,7 @@ Diseño maquinas
 
 ========================================================= */
 
-
 @media (max-width: 900px) {
-
 
     .gallery-heading {
 
@@ -3363,20 +3060,17 @@ Diseño maquinas
 
     }
 
-
     .gallery-heading > p {
 
         margin-top: 20px;
 
     }
 
-
     .carousel-viewport {
 
         height: 520px;
 
     }
-
 
     .carousel-caption {
 
@@ -3386,16 +3080,13 @@ Diseño maquinas
 
     }
 
-
     .carousel-caption h3 {
 
         font-size: 3.5rem;
 
     }
 
-
 }
-
 
 /* =========================================================
 
@@ -3403,9 +3094,7 @@ Diseño maquinas
 
 ========================================================= */
 
-
 @media (max-width: 600px) {
-
 
     .gallery-heading {
 
@@ -3413,20 +3102,17 @@ Diseño maquinas
 
     }
 
-
     .carousel-viewport {
 
         height: 500px;
 
     }
 
-
     .carousel-slide img {
 
         object-position: center;
 
     }
-
 
     .carousel-overlay {
 
@@ -3446,7 +3132,6 @@ Diseño maquinas
 
     }
 
-
     .carousel-caption {
 
         left: 22px;
@@ -3455,11 +3140,9 @@ Diseño maquinas
 
         bottom: 30px;
 
-
         max-width: none;
 
     }
-
 
     .carousel-caption h3 {
 
@@ -3467,18 +3150,15 @@ Diseño maquinas
 
     }
 
-
     .carousel-caption p {
 
         font-size: .82rem;
 
     }
 
-
     .carousel-arrow {
 
         top: 45%;
-
 
         width: 44px;
 
@@ -3486,20 +3166,17 @@ Diseño maquinas
 
     }
 
-
     .carousel-prev {
 
         left: 10px;
 
     }
 
-
     .carousel-next {
 
         right: 10px;
 
     }
-
 
     .carousel-counter {
 
@@ -3509,19 +3186,15 @@ Diseño maquinas
 
     }
 
-
     .carousel-navigation {
 
         align-items: flex-start;
 
-
         flex-direction: column;
-
 
         gap: 15px;
 
     }
-
 
     .carousel-dot {
 
@@ -3529,13 +3202,11 @@ Diseño maquinas
 
     }
 
-
     .carousel-dot.active {
 
         width: 40px;
 
     }
-
 
     .carousel-help {
 
@@ -3543,16 +3214,13 @@ Diseño maquinas
 
     }
 
-
 }
-
 
 /* =========================================================
 
    SCHEDULE
 
 ========================================================= */
-
 
 .schedule {
 
@@ -3570,77 +3238,59 @@ Diseño maquinas
 
         url("../assets/img/gym-05.png");
 
-
     background-size: cover;
-
 
     background-position: center;
 
 }
 
-
 .schedule-title > p:last-child {
 
     max-width: 520px;
-
 
     margin-top: -10px;
 
     margin-bottom: 40px;
 
-
     color: var(--gray);
 
 }
-
 
 .schedule-grid {
 
     display: grid;
 
-
     grid-template-columns: 1fr 1fr;
-
 
     gap: 25px;
 
 }
 
-
 .schedule-card {
 
     padding: 38px;
 
-
     background: rgba(10,10,10,.88);
-
 
     border: 1px solid var(--border);
 
-
     backdrop-filter: blur(10px);
-
 
     box-shadow: 0 20px 50px rgba(0,0,0,.25);
 
 }
 
-
 .schedule-heading {
 
     display: flex;
 
-
     align-items: center;
 
-
     gap: 18px;
-
 
     margin-bottom: 30px;
 
 }
-
 
 .schedule-icon {
 
@@ -3648,79 +3298,61 @@ Diseño maquinas
 
     height: 55px;
 
-
     flex-shrink: 0;
 
-
     display: flex;
-
 
     align-items: center;
 
     justify-content: center;
 
-
     border: 1px solid var(--red);
 
-
     color: var(--red);
-
 
     font-size: 1.35rem;
 
 }
 
-
 .schedule-heading span {
 
     color: #777;
-
 
     font-size: .63rem;
 
     font-weight: 900;
 
-
     letter-spacing: 2px;
 
 }
-
 
 .schedule-heading h3 {
 
     font-family: var(--title);
 
-
     font-size: 2rem;
-
 
     font-weight: 400;
 
 }
 
-
 .schedule-time {
 
     padding: 20px 0;
-
 
     border-top: 1px solid var(--border);
 
 }
 
-
 .schedule-time h4 {
 
     margin-bottom: 12px;
 
-
     color: var(--red);
-
 
     font-size: .88rem;
 
 }
-
 
 .schedule-time h4 i {
 
@@ -3728,66 +3360,49 @@ Diseño maquinas
 
 }
 
-
 .time-row {
 
     display: flex;
 
-
     justify-content: space-between;
-
 
     gap: 20px;
 
-
     padding: 7px 0;
 
-
     color: var(--gray);
-
 
     font-size: .88rem;
 
 }
 
-
 .time-row strong {
 
     color: white;
-
 
     text-align: right;
 
 }
 
-
 .schedule-note {
 
     display: flex;
 
-
     align-items: center;
-
 
     gap: 10px;
 
-
     margin-top: 20px;
-
 
     padding: 13px;
 
-
     background: rgba(237,28,36,.08);
 
-
     color: #bbb;
-
 
     font-size: .78rem;
 
 }
-
 
 .schedule-note i {
 
@@ -3795,136 +3410,105 @@ Diseño maquinas
 
 }
 
-
 /* PRICES */
-
 
 .price-list li {
 
     display: flex;
 
-
     align-items: center;
 
     justify-content: space-between;
 
-
     gap: 20px;
 
-
     padding: 13px 10px;
-
 
     border-bottom: 1px solid var(--border);
 
 }
 
-
 .price-list li > div {
 
     display: flex;
 
-
     align-items: center;
-
 
     gap: 11px;
 
 }
 
-
 .price-list i {
 
     width: 20px;
 
-
     color: var(--red);
 
 }
-
 
 .price-list span {
 
     color: #ddd;
 
-
     font-size: .9rem;
 
 }
-
 
 .price-list strong {
 
     color: white;
 
-
     font-size: 1.05rem;
 
 }
-
 
 .price-list .recommended {
 
     margin: 4px 0;
 
-
     background: rgba(237,28,36,.11);
 
 }
-
 
 .price-list .recommended strong {
 
     color: var(--red);
 
-
     font-size: 1.2rem;
 
 }
-
 
 .price-note {
 
     display: block;
 
-
     margin-top: 15px;
-
 
     color: #777;
 
 }
 
-
 .pricing-link {
 
     display: inline-flex;
 
-
     align-items: center;
-
 
     gap: 10px;
 
-
     margin-top: 25px;
 
-
     color: var(--red);
-
 
     font-size: .75rem;
 
     font-weight: 900;
 
-
     letter-spacing: 1px;
-
 
     transition: .3s;
 
 }
-
 
 .pricing-link:hover {
 
@@ -3932,170 +3516,131 @@ Diseño maquinas
 
 }
 
-
 /* =========================================================
 
    LOCATION
 
 ========================================================= */
 
-
 .location {
 
     background: var(--off-white);
-
 
     color: #111;
 
 }
 
-
 .location-grid {
 
     display: grid;
 
-
     grid-template-columns: .85fr 1.15fr;
 
-
     gap: 80px;
-
 
     align-items: center;
 
 }
 
-
 .location-description {
 
     max-width: 480px;
-
 
     margin-top: -5px;
 
     margin-bottom: 30px;
 
-
     color: #666;
-
 
     font-size: 1rem;
 
 }
-
 
 .address-card {
 
     display: flex;
 
-
     gap: 17px;
-
 
     margin-bottom: 30px;
 
-
     padding: 20px;
-
 
     background: white;
 
-
     border-left: 4px solid var(--red);
-
 
     box-shadow: 0 12px 30px rgba(0,0,0,.07);
 
 }
 
-
 .address-card > i {
 
     margin-top: 5px;
 
-
     color: var(--red);
-
 
     font-size: 1.5rem;
 
 }
 
-
 .address-card div {
 
     display: flex;
-
 
     flex-direction: column;
 
 }
 
-
 .address-card small {
 
     color: #999;
-
 
     font-size: .6rem;
 
     font-weight: 900;
 
-
     letter-spacing: 2px;
 
 }
-
 
 .address-card strong {
 
     margin: 4px 0;
 
-
     font-size: 1rem;
 
 }
-
 
 .address-card span {
 
     color: #777;
 
-
     font-size: .82rem;
 
 }
 
-
 /* PHOTO */
-
 
 .location-photo {
 
     position: relative;
 
-
     height: 540px;
 
-
     overflow: hidden;
-
 
     box-shadow: 0 25px 60px rgba(0,0,0,.18);
 
 }
 
-
 .location-photo::after {
 
     content: "";
 
-
     position: absolute;
 
-
     inset: 0;
-
 
     background:
 
@@ -4111,97 +3656,75 @@ Diseño maquinas
 
 }
 
-
 .location-photo img {
 
     width: 100%;
 
     height: 100%;
 
-
     object-fit: cover;
 
 }
-
 
 .location-photo-info {
 
     position: absolute;
 
-
     z-index: 5;
-
 
     left: 25px;
 
     bottom: 25px;
 
-
     display: flex;
-
 
     align-items: center;
 
-
     gap: 13px;
-
 
     padding: 15px 18px;
 
-
     background: rgba(0,0,0,.78);
 
-
     color: white;
-
 
     backdrop-filter: blur(10px);
 
 }
 
-
 .location-photo-info i {
 
     color: var(--red);
-
 
     font-size: 1.3rem;
 
 }
 
-
 .location-photo-info div {
 
     display: flex;
-
 
     flex-direction: column;
 
 }
 
-
 .location-photo-info strong {
 
     font-family: var(--title);
 
-
     font-size: 1.1rem;
-
 
     font-weight: 400;
 
 }
 
-
 .location-photo-info span {
 
     color: #aaa;
 
-
     font-size: .7rem;
 
 }
-
 
 /* =========================================================
 
@@ -4209,55 +3732,41 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .contact {
 
     position: relative;
 
-
     padding: 80px 0;
 
-
     overflow: hidden;
-
 
     background: var(--red);
 
 }
 
-
 .contact::after {
 
     content: "19";
 
-
     position: absolute;
-
 
     right: 3%;
 
     top: 50%;
 
-
     transform: translateY(-50%);
-
 
     color: rgba(255,255,255,.07);
 
-
     font-family: var(--title);
-
 
     font-size: 17rem;
 
-
     line-height: 1;
-
 
     pointer-events: none;
 
 }
-
 
 .contact .section-label {
 
@@ -4265,156 +3774,119 @@ Diseño maquinas
 
 }
 
-
 .contact-inner {
 
     position: relative;
 
-
     z-index: 3;
 
-
     display: flex;
-
 
     justify-content: space-between;
 
     align-items: center;
 
-
     gap: 50px;
 
 }
-
 
 .contact h2 {
 
     font-family: var(--title);
 
-
     font-size: clamp(3rem,6vw,5.5rem);
 
-
     font-weight: 400;
-
 
     line-height: .95;
 
 }
 
-
 .contact h2 span {
 
     display: block;
 
-
     color: #111;
 
 }
-
 
 .contact-inner > div:first-child > p:last-child {
 
     max-width: 520px;
 
-
     margin-top: 15px;
-
 
     color: rgba(255,255,255,.85);
 
 }
 
-
 /* CONTACT ACTIONS */
-
 
 .contact-actions {
 
     display: flex;
 
-
     align-items: center;
-
 
     gap: 10px;
 
 }
 
-
 .contact-whatsapp {
 
     display: flex;
 
-
     align-items: center;
-
 
     gap: 14px;
 
-
     padding: 17px 22px;
-
 
     background: white;
 
-
     color: #111;
-
 
     transition: .3s;
 
 }
 
-
 .contact-whatsapp:hover {
 
     transform: translateY(-3px);
-
 
     box-shadow: 0 15px 35px rgba(0,0,0,.18);
 
 }
 
-
 .contact-whatsapp > i {
 
     color: #25d366;
-
 
     font-size: 2rem;
 
 }
 
-
 .contact-whatsapp span {
 
     display: flex;
 
-
     flex-direction: column;
 
-
     font-size: 1rem;
-
 
     font-weight: 900;
 
 }
 
-
 .contact-whatsapp small {
 
     color: #777;
 
-
     font-size: .56rem;
-
 
     letter-spacing: 1px;
 
 }
-
 
 .contact-phone {
 
@@ -4422,25 +3894,19 @@ Diseño maquinas
 
     height: 58px;
 
-
     display: flex;
-
 
     align-items: center;
 
     justify-content: center;
 
-
     background: #111;
 
-
     color: white;
-
 
     transition: .3s;
 
 }
-
 
 .contact-phone:hover {
 
@@ -4448,60 +3914,45 @@ Diseño maquinas
 
 }
 
-
 /* =========================================================
 
    WHATSAPP FLOATING
 
 ========================================================= */
 
-
 .whatsapp-floating {
 
     position: fixed;
 
-
     z-index: 999;
-
 
     right: 22px;
 
     bottom: 22px;
 
-
     display: flex;
-
 
     align-items: center;
 
-
     gap: 9px;
-
 
     padding: 12px 17px;
 
-
     background: #25d366;
-
 
     color: white;
 
-
     border-radius: 40px;
-
 
     font-size: .75rem;
 
     font-weight: 900;
 
-
     box-shadow: 0 10px 30px rgba(0,0,0,.3);
-
 
     transition: .3s;
 
 }
-
 
 .whatsapp-floating i {
 
@@ -4509,16 +3960,13 @@ Diseño maquinas
 
 }
 
-
 .whatsapp-floating:hover {
 
     transform: translateY(-4px);
 
-
     box-shadow: 0 15px 35px rgba(0,0,0,.4);
 
 }
-
 
 /* =========================================================
 
@@ -4526,48 +3974,37 @@ Diseño maquinas
 
 ========================================================= */
 
-
 .footer {
 
     padding: 65px 0 25px;
-
 
     background: #050505;
 
 }
 
-
 .footer-main {
 
     display: grid;
 
-
     grid-template-columns: 2fr 1fr 1fr;
-
 
     gap: 50px;
 
-
     padding-bottom: 45px;
-
 
     border-bottom: 1px solid var(--border);
 
 }
 
-
 .footer-main > div:first-child p {
 
     margin-top: 12px;
 
-
     color: #777;
-
 
     font-size: .8rem;
 
 }
-
 
 .footer-location small,
 
@@ -4575,42 +4012,33 @@ Diseño maquinas
 
     display: block;
 
-
     margin-bottom: 12px;
 
-
     color: #777;
-
 
     font-size: .58rem;
 
     font-weight: 900;
 
-
     letter-spacing: 2px;
 
 }
-
 
 .footer-location p {
 
     color: #aaa;
 
-
     font-size: .8rem;
 
 }
-
 
 .footer-social div {
 
     display: flex;
 
-
     gap: 8px;
 
 }
-
 
 .footer-social a {
 
@@ -4618,54 +4046,41 @@ Diseño maquinas
 
     height: 38px;
 
-
     display: flex;
-
 
     align-items: center;
 
     justify-content: center;
 
-
     border: 1px solid var(--border);
-
 
     transition: .3s;
 
 }
 
-
 .footer-social a:hover {
 
     background: var(--red);
-
 
     border-color: var(--red);
 
 }
 
-
 .footer-bottom {
 
     display: flex;
 
-
     justify-content: space-between;
-
 
     gap: 20px;
 
-
     padding-top: 25px;
 
-
     color: #555;
-
 
     font-size: .7rem;
 
 }
-
 
 /* =========================================================
 
@@ -4673,9 +4088,7 @@ Diseño maquinas
 
 ========================================================= */
 
-
 @media (max-width: 1050px) {
-
 
     .nav-links {
 
@@ -4683,13 +4096,11 @@ Diseño maquinas
 
     }
 
-
     .nav-links a {
 
         font-size: .65rem;
 
     }
-
 
     .about-grid,
 
@@ -4699,9 +4110,7 @@ Diseño maquinas
 
     }
 
-
 }
-
 
 /* =========================================================
 
@@ -4709,12 +4118,11 @@ Diseño maquinas
 
 ========================================================= */
 
-
 @media (max-width: 900px) {
 
     /* Logo del header */
-    .logo-img { height: 46px; }
 
+    .logo-img { height: 46px; }
 
     .section {
 
@@ -4722,70 +4130,51 @@ Diseño maquinas
 
     }
 
-
     /* HEADER */
-
 
     .nav-links {
 
         position: absolute;
 
-
         top: 76px;
 
         left: 0;
 
-
         width: 100%;
-
 
         display: flex;
 
-
         flex-direction: column;
-
 
         align-items: flex-start;
 
-
         gap: 0;
-
 
         padding: 15px 5% 25px;
 
-
         background: rgba(5,5,5,.98);
-
 
         border-bottom: 1px solid var(--border);
 
-
         opacity: 0;
-
 
         visibility: hidden;
 
-
         transform: translateY(-15px);
-
 
         transition: .3s ease;
 
     }
 
-
     .nav-links.active {
 
         opacity: 1;
 
-
         visibility: visible;
-
 
         transform: translateY(0);
 
     }
-
 
     .nav-links li {
 
@@ -4793,25 +4182,19 @@ Diseño maquinas
 
     }
 
-
     .nav-links a {
 
         display: block;
 
-
         width: 100%;
-
 
         padding: 14px 0;
 
-
         font-size: .78rem;
-
 
         border-bottom: 1px solid rgba(255,255,255,.06);
 
     }
-
 
     .nav-links a::after {
 
@@ -4819,13 +4202,11 @@ Diseño maquinas
 
     }
 
-
     .menu-toggle {
 
         display: block;
 
     }
-
 
     .btn-nav {
 
@@ -4833,19 +4214,15 @@ Diseño maquinas
 
     }
 
-
     /* HERO */
-
 
     .hero {
 
         min-height: 850px;
 
-
         background-position: 58% center;
 
     }
-
 
     .hero-content {
 
@@ -4859,16 +4236,13 @@ Diseño maquinas
 
     }
 
-
     .hero-inner {
 
         max-width: 620px;
 
     }
 
-
     /* INTRO */
-
 
     .intro-grid {
 
@@ -4876,22 +4250,17 @@ Diseño maquinas
 
     }
 
-
     .intro-item {
 
         justify-content: flex-start;
 
-
         border-right: 0;
-
 
         border-bottom: 1px solid #ddd;
 
     }
 
-
     /* ABOUT */
-
 
     .about-grid {
 
@@ -4899,16 +4268,13 @@ Diseño maquinas
 
     }
 
-
     .about-image {
 
         height: 500px;
 
     }
 
-
     /* SERVICES */
-
 
     .services-grid {
 
@@ -4916,16 +4282,13 @@ Diseño maquinas
 
     }
 
-
     .service-card {
 
         min-height: 290px;
 
     }
 
-
     /* GALLERY */
-
 
     .gallery-heading {
 
@@ -4933,26 +4296,21 @@ Diseño maquinas
 
     }
 
-
     .gallery-heading > p {
 
         margin-top: 20px;
 
     }
 
-
     .gallery-grid {
 
         grid-template-columns: 1fr 1fr;
-
 
         grid-auto-rows: 270px;
 
     }
 
-
     /* SCHEDULE */
-
 
     .schedule-grid {
 
@@ -4960,9 +4318,7 @@ Diseño maquinas
 
     }
 
-
     /* LOCATION */
-
 
     .location-grid {
 
@@ -4970,22 +4326,17 @@ Diseño maquinas
 
     }
 
-
     /* CONTACT */
-
 
     .contact-inner {
 
         flex-direction: column;
 
-
         align-items: flex-start;
 
     }
 
-
     /* FOOTER */
-
 
     .footer-main {
 
@@ -4993,9 +4344,7 @@ Diseño maquinas
 
     }
 
-
 }
-
 
 /* =========================================================
 
@@ -5003,12 +4352,11 @@ Diseño maquinas
 
 ========================================================= */
 
-
 @media (max-width: 600px) {
 
     /* Logo del header */
-    .logo-img { height: 40px; }
 
+    .logo-img { height: 40px; }
 
     .container {
 
@@ -5016,16 +4364,13 @@ Diseño maquinas
 
     }
 
-
     .section {
 
         padding: 70px 0;
 
     }
 
-
     /* HEADER */
-
 
     .navbar {
 
@@ -5033,13 +4378,11 @@ Diseño maquinas
 
     }
 
-
     .logo {
 
         font-size: 1.3rem;
 
     }
-
 
     .nav-links {
 
@@ -5047,26 +4390,21 @@ Diseño maquinas
 
     }
 
-
     .btn-nav {
 
         display: none;
 
     }
 
-
     /* HERO */
-
 
     .hero {
 
         min-height: 100svh;
 
-
         background-position: 62% center;
 
     }
-
 
     .hero::before {
 
@@ -5084,7 +4422,6 @@ Diseño maquinas
 
     }
 
-
     .hero-content {
 
         padding:
@@ -5097,19 +4434,15 @@ Diseño maquinas
 
     }
 
-
     .hero-eyebrow {
 
         max-width: 300px;
 
-
         font-size: .62rem;
-
 
         letter-spacing: 1.8px;
 
     }
-
 
     .hero h1 {
 
@@ -5117,49 +4450,39 @@ Diseño maquinas
 
     }
 
-
     .hero-tagline {
 
         font-size: 1.5rem;
 
     }
 
-
     .hero-description {
 
         max-width: 370px;
-
 
         font-size: .88rem;
 
     }
 
-
     .hero-buttons {
 
         flex-direction: column;
 
-
         align-items: stretch;
-
 
         max-width: 330px;
 
     }
 
-
     .hero-info {
 
         flex-direction: column;
 
-
         gap: 15px;
-
 
         margin-top: 35px;
 
     }
-
 
     .scroll-down {
 
@@ -5167,9 +4490,7 @@ Diseño maquinas
 
     }
 
-
     /* TITLES */
-
 
     .section-title {
 
@@ -5177,9 +4498,7 @@ Diseño maquinas
 
     }
 
-
     /* ABOUT */
-
 
     .about-image {
 
@@ -5187,19 +4506,15 @@ Diseño maquinas
 
     }
 
-
     /* MOTIVATION */
-
 
     .motivation {
 
         min-height: 450px;
 
-
         background-attachment: scroll;
 
     }
-
 
     .motivation h2 {
 
@@ -5207,9 +4522,7 @@ Diseño maquinas
 
     }
 
-
     /* SERVICES */
-
 
     .services {
 
@@ -5217,22 +4530,17 @@ Diseño maquinas
 
     }
 
-
     /* GALLERY */
-
 
     .gallery-grid {
 
         display: grid;
 
-
         grid-template-columns: 1fr;
-
 
         grid-auto-rows: 280px;
 
     }
-
 
     .gallery-wide {
 
@@ -5240,9 +4548,7 @@ Diseño maquinas
 
     }
 
-
     /* SCHEDULE */
-
 
     .schedule-card {
 
@@ -5250,19 +4556,15 @@ Diseño maquinas
 
     }
 
-
     .time-row {
 
         align-items: flex-start;
 
-
         flex-direction: column;
-
 
         gap: 2px;
 
     }
-
 
     .time-row strong {
 
@@ -5270,9 +4572,7 @@ Diseño maquinas
 
     }
 
-
     /* LOCATION */
-
 
     .location-photo {
 
@@ -5280,9 +4580,7 @@ Diseño maquinas
 
     }
 
-
     /* CONTACT */
-
 
     .contact {
 
@@ -5290,13 +4588,11 @@ Diseño maquinas
 
     }
 
-
     .contact h2 {
 
         font-size: 3.4rem;
 
     }
-
 
     .contact-actions {
 
@@ -5304,16 +4600,13 @@ Diseño maquinas
 
     }
 
-
     .contact-whatsapp {
 
         flex: 1;
 
     }
 
-
     /* WHATSAPP */
-
 
     .whatsapp-floating {
 
@@ -5321,19 +4614,15 @@ Diseño maquinas
 
         bottom: 15px;
 
-
         width: 54px;
 
         height: 54px;
 
-
         justify-content: center;
-
 
         padding: 0;
 
     }
-
 
     .whatsapp-floating i {
 
@@ -5341,39 +4630,31 @@ Diseño maquinas
 
     }
 
-
     .whatsapp-floating span {
 
         display: none;
 
     }
 
-
     /* FOOTER */
-
 
     .footer-main {
 
         grid-template-columns: 1fr;
 
-
         gap: 30px;
 
     }
-
 
     .footer-bottom {
 
         flex-direction: column;
 
-
         gap: 7px;
 
     }
 
-
 }
-
 
 /* =========================================================
 
@@ -5381,9 +4662,7 @@ Diseño maquinas
 
 ========================================================= */
 
-
 @media (max-width: 380px) {
-
 
     .hero h1 {
 
@@ -5391,13 +4670,11 @@ Diseño maquinas
 
     }
 
-
     .hero-tagline {
 
         font-size: 1.3rem;
 
     }
-
 
     .section-title {
 
@@ -5405,12 +4682,361 @@ Diseño maquinas
 
     }
 
-
     .contact h2 {
 
         font-size: 3rem;
 
     }
 
+}
 
+/*=========================================================
+   FIT 19 - IDENTIDAD FITNESS / PESAS
+   Sobrescrituras al final para mantener el proyecto original
+=========================================================*/
+
+:root {
+    --red: #d92332;
+    --red-dark: #ad1523;
+    --off-white: #f0efed;
+}
+
+body {
+    background: #0c0c0e;
+}
+
+.header {
+    background: rgba(8,8,10,.92);
+}
+
+.navbar .logo-img {
+    max-height: 76px;
+}
+
+#inicio.hero {
+    background: #080808;
+    background-image: none;
+    min-height: 100svh;
+    isolation: isolate;
+}
+
+#inicio .hero-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#inicio .hero-slide-bg {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease,visibility 1s ease;
+}
+
+#inicio .hero-slide-bg.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#inicio.hero::before {
+    z-index: 1;
+    background: linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.28));
+    pointer-events: none;
+}
+
+#inicio.hero::after {
+    z-index: 2;
+    pointer-events: none;
+}
+
+#inicio .hero-overlay {
+    z-index: 2;
+    background: linear-gradient(180deg,rgba(0,0,0,.12),transparent 42%,rgba(0,0,0,.53));
+    pointer-events: none;
+}
+
+#inicio .hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+#inicio .scroll-down {
+    position: absolute;
+    z-index: 10;
+}
+
+.fit-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 22px;
+    font-weight: 900;
+    font-size: .75rem;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.fit-eyebrow span {
+    display: block;
+    width: 42px;
+    height: 3px;
+    background: var(--red);
+}
+
+.hero .hero-tagline {
+    margin-top: 30px;
+    line-height: 1.18;
+}
+
+.hero .hero-description {
+    max-width: 630px;
+}
+
+.btn-primary {
+    border-radius: 6px;
+}
+
+.about {
+    background: #f0efed;
+}
+
+.about-grid {
+    gap: clamp(28px,6vw,85px);
+}
+
+.about-image {
+    border-radius: 14px;
+}
+
+.fit-philosophy {
+    background: radial-gradient(circle at 50% 0,#222229 0,#0d0d0f 60%);
+    color: #fff;
+    padding: 90px 0;
+}
+
+.fit-philosophy-inner {
+    max-width: 1120px;
+}
+
+.fit-philosophy-top {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.fit-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #ff525e;
+    font-size: .7rem;
+    letter-spacing: 2px;
+    font-weight: 900;
+    margin-bottom: 21px;
+}
+
+.fit-philosophy h2 {
+    font-family: var(--title);
+    font-size: clamp(2.7rem,6vw,5rem);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.fit-philosophy h2 em {
+    font-style: normal;
+    color: #f14954;
+}
+
+.fit-philosophy-top p {
+    margin: 20px auto 0;
+    max-width: 710px;
+    color: #bdbdc2;
+    line-height: 1.9;
+}
+
+.fit-values {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 18px;
+    margin-top: 50px;
+}
+
+.fit-values>div {
+    padding: 28px;
+    background: #19191d;
+    border: 1px solid #32323a;
+    border-radius: 12px;
+}
+
+.fit-values span {
+    display: block;
+    color: #f14954;
+    font-family: var(--title);
+    font-size: 1.3rem;
+}
+
+.fit-values h3 {
+    font-family: var(--title);
+    font-size: 1.65rem;
+    font-weight: 400;
+    letter-spacing: .6px;
+    margin: 10px 0 4px;
+}
+
+.fit-values p {
+    color: #aaaab2;
+    font-size: .88rem;
+}
+
+.services {
+    background-attachment: scroll;
+}
+
+.service-card {
+    border-radius: 12px;
+}
+
+.machines-section {
+    background: linear-gradient(180deg,#111115,#0a0a0c);
+    padding: 95px 20px;
+}
+
+.machines-heading {
+    margin-bottom: 40px;
+}
+
+.machine-card {
+    background: #1b1b20;
+    border-radius: 14px;
+    border: 1px solid #35353b;
+}
+
+.machine-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    background: #16161b;
+    padding: 12px;
+}
+
+.machine-card h3 {
+    margin: 0;
+    padding: 19px 20px;
+    line-height: 1.4;
+    font-size: .92rem;
+    letter-spacing: 1px;
+}
+
+.fit-machines-cta {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 32px;
+    margin-top: 32px;
+    border-radius: 12px;
+    background: #1b1b20;
+    border: 1px solid #35353b;
+}
+
+.fit-machines-cta span {
+    font-family: var(--title);
+    font-size: clamp(1.2rem,2.5vw,1.8rem);
+    letter-spacing: .5px;
+}
+
+.fit-machines-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--red);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: .72rem;
+    font-weight: 900;
+}
+
+@media (max-width:900px) {
+    .fit-values {
+        gap: 10px;
+    }
+}
+
+@media (max-width:768px) {
+    #inicio.hero {
+        min-height: 100svh;
+    }
+
+    #inicio .hero-content {
+        padding: 130px 6% 90px;
+    }
+
+    #inicio .hero-slide-bg {
+        background-position: center;
+    }
+
+    #inicio.hero::before {
+        background: linear-gradient(180deg,rgba(0,0,0,.38) 0%,rgba(0,0,0,.62) 55%,rgba(0,0,0,.78) 100%);
+    }
+
+    #inicio .hero h1 {
+        font-size: clamp(3.3rem,12vw,5rem);
+    }
+
+    .fit-eyebrow {
+        font-size: .62rem;
+        letter-spacing: 1.2px;
+    }
+
+    .fit-values {
+        grid-template-columns: 1fr;
+    }
+
+    .fit-philosophy {
+        padding: 65px 0;
+    }
+
+    .machines-section {
+        padding: 65px 16px;
+    }
+
+    .machines-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .machine-card img {
+        height: auto;
+        max-height: none;
+        aspect-ratio: auto;
+        object-fit: contain;
+        padding: 9px;
+    }
+
+    .machine-card h3 {
+        padding: 16px;
+        font-size: .85rem;
+    }
+
+    .fit-machines-cta {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 22px;
+    }
+
+    .fit-machines-cta a {
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    #inicio .hero-slide-bg {
+        transition: none;
+    }
 }
