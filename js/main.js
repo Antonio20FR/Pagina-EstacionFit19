@@ -45,10 +45,24 @@ menuToggle.addEventListener("click", () => {
 
 });
 
+/* =========================================================
+   CARRUCEL DEL INICIO
+========================================================= */
+document.addEventListener('DOMContentLoaded', () => {
+            const slides = [...document.querySelectorAll('#inicio .hero-slide-bg')];
+            if (slides.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            let current = 0;
+            setInterval(() => {
+                slides[current].classList.remove('active');
+                current = (current + 1) % slides.length;
+                slides[current].classList.add('active');
+            }, 5000);
+        });
 
 /* =========================================================
    FUNCIÓN PARA CERRAR MENÚ
 ========================================================= */
+
 
 function closeMenu() {
 

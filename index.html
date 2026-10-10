@@ -1,1244 +1,2652 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
+
+
 <head>
+
     <meta charset="UTF-8">
 
+
+
     <meta name="viewport"
+
         content="width=device-width, initial-scale=1.0">
 
+
+
     <meta name="description"
+
         content="Estación Fit 19 - Box, fuerza y acondicionamiento físico en El Castillo, Jalisco. Entrenamiento para jóvenes desde los 14 años, adultos y deportistas.">
 
+
+
     <meta name="keywords"
+
         content="Estación Fit 19, gimnasio, gym, box, pesas, fuerza, acondicionamiento físico, El Castillo, San José del Castillo, Jalisco">
 
+
+
     <meta name="author"
+
         content="Estación Fit 19">
 
+
+
     <title>
+
         Estación Fit 19 | Box, Fuerza y Acondicionamiento
+
     </title>
+
+
+
 
 
     <!-- GOOGLE FONTS -->
 
+
+
     <link rel="preconnect"
+
         href="https://fonts.googleapis.com">
 
+
+
     <link rel="preconnect"
+
         href="https://fonts.gstatic.com"
+
         crossorigin>
 
+
+
     <link
+
         href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;500;700;900&display=swap"
+
         rel="stylesheet">
+
+
+
 
 
     <!-- FONT AWESOME -->
 
+
+
     <link rel="stylesheet"
+
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+
 
 
     <!-- CSS -->
 
+
+
     <link rel="stylesheet"
+
         href="css/styles.css">
 
+
+
+
+    <!-- CARRUSEL DE FOTOGRAFÍAS EN EL INICIO -->
+    <style>
+        #inicio.hero { position: relative; isolation: isolate; overflow: hidden; background: #090909; }
+        #inicio .hero-slideshow { position: absolute; inset: 0; z-index: -2; pointer-events: none; }
+        #inicio .hero-slide-bg { position: absolute; inset: 0; background-size: cover; background-position: center; background-repeat: no-repeat; opacity: 0; transition: opacity 1.2s ease-in-out; }
+        #inicio .hero-slide-bg.active { opacity: 1; }
+        #inicio .hero-overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(0,0,0,.80), rgba(0,0,0,.45)), linear-gradient(0deg,rgba(0,0,0,.4),transparent 60%); pointer-events: none; }
+        #inicio .hero-content { position: relative; z-index: 1; }
+        #inicio .scroll-down { position: relative; z-index: 1; }
+        @media (prefers-reduced-motion: reduce) { #inicio .hero-slide-bg { transition: none; } }
+    </style>
+
 </head>
+
+
+
 
 
 <body>
 
 
+
+
+
     <!-- =====================================================
+
          HEADER
+
     ====================================================== -->
+
+
 
     <header class="header">
 
+
+
         <nav class="navbar container">
 
+
+
             <a href="#inicio" class="logo">
+
                <img
+
                src="assets/img/logo-estacion-fit-19.png"
+
                alt="Estación Fit 19"
+
               class="logo-img">
+
             </a>
 
 
+
+
+
             <ul class="nav-links"
+
                 id="nav-links">
 
+
+
                 <li>
+
                     <a href="#inicio"
+
                         class="active">
+
                         Inicio
+
                     </a>
+
                 </li>
 
+
+
                 <li>
+
                     <a href="#nosotros">
+
                         Nosotros
+
                     </a>
+
                 </li>
 
+
+
                 <li>
+
                     <a href="#servicios">
+
                         Entrenamiento
+
                     </a>
+
                 </li>
 
+
+
                 <li>
+
                     <a href="#galeria">
+
                         Instalaciones
+
                     </a>
+
                 </li>
 
+
+
                 <li>
+
                     <a href="#horarios">
+
                         Horarios
+
                     </a>
+
                 </li>
 
+
+
                 <li>
+
                     <a href="#ubicacion">
+
                         Ubicación
+
                     </a>
+
                 </li>
+
+
 
             </ul>
 
 
+
+
+
             <a
+
                 href="https://wa.me/523314737459?text=Hola%20Estaci%C3%B3n%20Fit%2019,%20quisiera%20solicitar%20informaci%C3%B3n."
+
                 target="_blank"
+
                 rel="noopener noreferrer"
+
                 class="btn-nav">
+
+
 
                 <i class="fa-brands fa-whatsapp"></i>
 
+
+
                 Informes
+
+
 
             </a>
 
 
+
+
+
             <button
+
                 class="menu-toggle"
+
                 id="menu-toggle"
+
                 aria-label="Abrir menú">
+
+
 
                 <i class="fa-solid fa-bars"></i>
 
+
+
             </button>
+
+
 
         </nav>
 
+
+
     </header>
+
+
+
+
 
 
 
     <main>
 
 
+
+
+
         <!-- =================================================
+
              HERO 
+
         ================================================== -->
 
+
+
         <section class="hero"
+
             id="inicio">
+
+            <!-- Carrusel de fondo: cambia de imagen cada 5 segundos -->
+            <div class="hero-slideshow" aria-hidden="true">
+                <div class="hero-slide-bg active" style="background-image: url('assets/img/gym-03.png');"></div>
+                <div class="hero-slide-bg" style="background-image: url('assets/img/gym-01.png');"></div>
+                <div class="hero-slide-bg" style="background-image: url('assets/img/gym-04.png');"></div>
+                <div class="hero-slide-bg" style="background-image: url('assets/img/gym-05.png');"></div>
+            </div>
+
+
+
 
             <div class="hero-overlay"></div>
 
 
+
+
+
             <div class="hero-content">
+
+
 
                 <div class="hero-inner">
 
-                    
+
+
+
+
+
+
 
 
                     <h1>
 
+
+
                         ESTACIÓN
 
+
+
                         <strong>
+
                             FIT <em>19</em>
+
                         </strong>
+
+
 
                     </h1>
 
 
+
+
+
                     <p class="hero-tagline">
 
+
+
                         ENTRENA. MEJORA.
+
                         <span>SUPÉRATE.</span>
 
+
+
                     </p>
+
+
+
 
 
                     <p class="hero-description">
 
+
+
                         Box, fuerza y acondicionamiento físico
+
                         para jóvenes y adultos.
+
+
 
                     </p>
 
 
+
+
+
                     <div class="hero-buttons">
 
+
+
                         <a
+
                             href="https://wa.me/523314737459?text=Hola%20Estaci%C3%B3n%20Fit%2019,%20quiero%20comenzar%20a%20entrenar."
+
                             target="_blank"
+
                             rel="noopener noreferrer"
+
                             class="btn btn-primary">
+
+
 
                             <i class="fa-brands fa-whatsapp"></i>
 
+
+
                             QUIERO EMPEZAR
 
+
+
                         </a>
+
+
+
 
 
                         <a href="#nosotros"
+
                             class="btn btn-secondary">
+
+
 
                             CONOCE EL GIMNASIO
 
+
+
                             <i class="fa-solid fa-arrow-down"></i>
+
+
 
                         </a>
 
+
+
                     </div>
+
+
+
 
 
                     <div class="hero-info">
 
+
+
                         <div>
+
+
 
                             <i class="fa-solid fa-location-dot"></i>
 
+
+
                             <span>
+
+
 
                                 <small>UBICACIÓN</small>
 
+
+
                                 El Castillo, Jalisco
+
+
 
                             </span>
 
+
+
                         </div>
+
+
 
                     </div>
 
+
+
                 </div>
+
+
 
             </div>
 
 
+
+
+
             <a href="#nosotros"
+
                 class="scroll-down"
+
                 aria-label="Continuar">
+
+
 
                 <i class="fa-solid fa-chevron-down"></i>
 
+
+
             </a>
+
+
 
         </section>
 
 
 
+
+
+
+
         <!-- =================================================
+
              NOSOTROS
+
         ================================================== -->
 
+
+
         <section class="about section"
+
             id="nosotros">
+
+
 
             <div class="container about-grid">
 
 
+
+
+
                 <div class="about-image">
 
+
+
                     <img
+
                         src="assets/img/gym-02.png"
+
                         alt="Entrenamiento en Estación Fit 19"
+
                         loading="lazy">
+
+
+
 
 
                     <div class="about-image-label">
 
+
+
                         <span>ESTACIÓN</span>
 
+
+
                         <strong>
+
                             FIT 19
+
                         </strong>
+
+
 
                     </div>
 
+
+
                 </div>
+
+
+
+
 
 
 
                 <div class="about-text">
 
+
+
                     <p class="section-label">
+
                         MÁS QUE UN GIMNASIO
+
                     </p>
+
+
+
 
 
                     <h2 class="section-title">
 
+
+
                         UN ESPACIO PARA
 
+
+
                         <span>
+
                             ENTRENAR EN SERIO.
+
                         </span>
+
+
 
                     </h2>
 
 
+
+
+
                     <p class="about-lead">
 
+
+
                         En Estación Fit 19 entrenamos con un
+
                         objetivo: ayudarte a mejorar tu fuerza,
+
                         condición y rendimiento.
 
+
+
                     </p>
 
 
+
+
+
                     <p>
+
+
 
                         Nuestro espacio está dirigido a jóvenes y
+
                         adultos que buscan mantenerse activos,
+
                         desarrollar sus capacidades y superarse
+
                         entrenamiento tras entrenamiento.
 
+
+
                     </p>
+
+
+
 
 
                     <p>
 
+
+
                         Aquí puedes trabajar box, fuerza y
+
                         acondicionamiento físico dentro de un
+
                         ambiente enfocado en el entrenamiento.
 
+
+
                     </p>
+
+
+
 
 
                     <a href="#servicios"
+
                         class="text-link">
+
+
 
                         DESCUBRE CÓMO ENTRENAMOS
 
+
+
                         <i class="fa-solid fa-arrow-right"></i>
+
+
 
                     </a>
 
+
+
                 </div>
 
+
+
             </div>
+
+
 
         </section>
 
 
 
+
+
+
+
         <!-- =================================================
+
              SERVICIOS
+
         ================================================== -->
 
+
+
         <section class="services section"
+
             id="servicios">
+
+
 
             <div class="container">
 
 
+
+
+
                 <div class="section-heading center">
 
+
+
                     <p class="section-label">
+
                         ENCUENTRA TU RITMO
+
                     </p>
+
+
+
 
 
                     <h2 class="section-title">
 
+
+
                         ENTRENA A TU
 
+
+
                         <span>
+
                             MANERA
+
                         </span>
+
+
 
                     </h2>
 
 
+
+
+
                     <p class="section-description">
 
+
+
                         Diferentes formas de entrenar.
+
                         Un mismo objetivo, mejorar.
+
+
 
                     </p>
 
+
+
                 </div>
+
+
+
+
 
 
 
                 <div class="services-grid">
 
 
+
+
+
                     <!-- BOX -->
+
+
 
                     <article class="service-card">
 
+
+
                         <span class="service-number">
+
                             01
+
                         </span>
+
+
 
                         <div class="service-icon">
 
+
+
                             <i class="fa-solid fa-hand-fist"></i>
+
+
 
                         </div>
 
+
+
                         <h3>
+
                             BOX
+
                         </h3>
+
+
 
                         <p>
 
+
+
                             Desarrolla técnica, coordinación,
+
                             resistencia y condición física
+
                             mediante el entrenamiento de box.
+
+
 
                         </p>
 
+
+
                         <span class="service-line"></span>
 
+
+
                     </article>
+
+
+
+
 
 
 
                     <!-- FUERZA -->
 
+
+
                     <article class="service-card">
 
+
+
                         <span class="service-number">
+
                             02
+
                         </span>
+
+
 
                         <div class="service-icon">
 
+
+
                             <i class="fa-solid fa-dumbbell"></i>
+
+
 
                         </div>
 
+
+
                         <h3>
+
                             FUERZA Y PESAS
+
                         </h3>
+
+
 
                         <p>
 
+
+
                             Trabaja diferentes grupos musculares,
+
                             desarrolla fuerza y mejora tu
+
                             rendimiento con nuestro equipo.
+
+
 
                         </p>
 
+
+
                         <span class="service-line"></span>
 
+
+
                     </article>
+
+
+
+
 
 
 
                     <!-- ACONDICIONAMIENTO -->
 
+
+
                     <article class="service-card">
 
+
+
                         <span class="service-number">
+
                             03
+
                         </span>
+
+
 
                         <div class="service-icon">
 
+
+
                             <i class="fa-solid fa-person-running"></i>
+
+
 
                         </div>
 
+
+
                         <h3>
+
                             ACONDICIONAMIENTO
+
                         </h3>
+
+
 
                         <p>
 
+
+
                             Mejora resistencia, movilidad,
+
                             capacidad física y rendimiento
+
                             para tus actividades deportivas.
+
+
 
                         </p>
 
+
+
                         <span class="service-line"></span>
+
+
 
                     </article>
 
 
+
+
+
                 </div>
+
+
 
             </div>
 
+
+
         </section>
+
+
+
+
 
 
 
         <!-- =================================================
+
              BANNER
+
         ================================================== -->
+
+
 
         <section class="motivation">
 
+
+
             <div class="motivation-overlay"></div>
+
+
 
             <div class="container motivation-content">
 
+
+
                 <span>
+
                     ESTACIÓN FIT 19
+
                 </span>
+
+
 
                 <h2>
 
+
+
                     TU SIGUIENTE NIVEL
 
+
+
                     <strong>
+
                         EMPIEZA AQUÍ.
+
                     </strong>
+
+
 
                 </h2>
 
+
+
                 <a
+
                     href="https://wa.me/523314737459?text=Hola%20Estaci%C3%B3n%20Fit%2019,%20quiero%20informaci%C3%B3n%20para%20comenzar%20a%20entrenar."
+
                     target="_blank"
+
                     rel="noopener noreferrer"
+
                     class="btn btn-primary">
+
+
 
                     PIDE INFORMES
 
+
+
                     <i class="fa-brands fa-whatsapp"></i>
+
+
 
                 </a>
 
+
+
             </div>
+
+
 
         </section>
 
+
+
 <!-- =================================================
+
      GALERÍA / CARRUSEL
+
 ================================================== -->
+
+
 
 <section class="gallery section" id="galeria">
 
+
+
     <!-- ENCABEZADO -->
+
     <div class="container">
+
+
 
         <div class="gallery-heading">
 
+
+
             <div>
+
                 <p class="section-label">
+
                     CONOCE EL ESPACIO
+
                 </p>
 
+
+
                 <h2 class="section-title">
+
                     NUESTRA
+
                     <span>ESTACIÓN</span>
+
                 </h2>
+
             </div>
 
-            
+
+
+
+
+
 
         </div>
 
+
+
     </div>
+
+
+
 
 
     <!-- CARRUSEL -->
 
+
+
     <div class="gym-carousel" id="gym-carousel">
 
+
+
         <div class="carousel-viewport">
+
+
 
             <div class="carousel-track">
 
 
+
+
+
                 <!-- FOTO 1 -->
+
+
 
                 <article class="carousel-slide active">
 
+
+
                     <img
+
                         src="assets/img/gym-01.png"
+
                         alt="Área de entrenamiento de Estación Fit 19">
+
+
 
                     <div class="carousel-overlay"></div>
 
+
+
                     <div class="carousel-caption">
+
+
 
                         <span>01 / ESTACIÓN FIT 19</span>
 
+
+
                         <h3>
+
                             ÁREA DE ENTRENAMIENTO
+
                         </h3>
 
+
+
                         <p>
+
                             Un espacio para trabajar fuerza,
+
                             condición y rendimiento.
+
                         </p>
+
+
 
                     </div>
 
+
+
                 </article>
+
+
+
 
 
                 <!-- FOTO 2 -->
 
+
+
                 <article class="carousel-slide">
 
+
+
                     <img
+
                         src="assets/img/gym-02.png"
+
                         alt="Área de fuerza de Estación Fit 19">
+
+
 
                     <div class="carousel-overlay"></div>
 
+
+
                     <div class="carousel-caption">
+
+
 
                         <span>02 / FUERZA</span>
 
+
+
                         <h3>
+
                             FUERZA Y PESAS
+
                         </h3>
 
+
+
                         <p>
+
                             Entrena diferentes grupos musculares
+
                             y trabaja en tus objetivos.
+
                         </p>
+
+
 
                     </div>
 
+
+
                 </article>
+
+
+
 
 
                 <!-- FOTO 3 -->
 
+
+
                 <article class="carousel-slide">
 
+
+
                     <img
+
                         src="assets/img/gym-03.png"
+
                         alt="Entrenamiento en Estación Fit 19">
+
+
 
                     <div class="carousel-overlay"></div>
 
+
+
                     <div class="carousel-caption">
+
+
 
                         <span>03 / ENTRENAMIENTO</span>
 
+
+
                         <h3>
+
                             ENTRENA A TU RITMO
+
                         </h3>
 
+
+
                         <p>
+
                             Constancia, disciplina y un espacio
+
                             para seguir mejorando.
+
                         </p>
+
+
 
                     </div>
 
+
+
                 </article>
+
+
+
 
 
                 <!-- FOTO 4 -->
 
+
+
                 <article class="carousel-slide">
 
+
+
                     <img
+
                         src="assets/img/gym-04.png"
+
                         alt="Zona de box de Estación Fit 19">
+
+
 
                     <div class="carousel-overlay"></div>
 
+
+
                     <div class="carousel-caption">
+
+
 
                         <span>04 / BOX</span>
 
+
+
                         <h3>
+
                             ZONA DE BOX
+
                         </h3>
 
+
+
                         <p>
+
                             Técnica, resistencia y condición
+
                             física en cada entrenamiento.
+
                         </p>
+
+
 
                     </div>
 
+
+
                 </article>
+
+
+
 
 
                 <!-- FOTO 5 -->
 
+
+
                 <article class="carousel-slide">
 
+
+
                     <img
+
                         src="assets/img/gym-05.png"
+
                         alt="Área de pesas de Estación Fit 19">
+
+
 
                     <div class="carousel-overlay"></div>
 
+
+
                     <div class="carousel-caption">
+
+
 
                         <span>05 / FUERZA</span>
 
+
+
                         <h3>
+
                             ÁREA DE PESAS
+
                         </h3>
 
+
+
                         <p>
+
                             Equipo para complementar tu
+
                             entrenamiento de fuerza.
+
                         </p>
+
+
 
                     </div>
 
+
+
                 </article>
+
+
+
 
 
                 <!-- FOTO 6 -->
 
+
+
                 <article class="carousel-slide">
 
+
+
                     <img
+
                         src="assets/img/gym-06.png"
+
                         alt="Acondicionamiento físico en Estación Fit 19">
+
+
 
                     <div class="carousel-overlay"></div>
 
+
+
                     <div class="carousel-caption">
+
+
 
                         <span>06 / RENDIMIENTO</span>
 
+
+
                         <h3>
+
                             ACONDICIONAMIENTO
+
                         </h3>
 
+
+
                         <p>
+
                             Mejora resistencia, movilidad
+
                             y rendimiento físico.
+
                         </p>
+
+
 
                     </div>
 
+
+
                 </article>
 
+
+
             </div>
+
+
+
 
 
             <!-- FLECHA IZQUIERDA -->
 
+
+
             <button
+
                 class="carousel-arrow carousel-prev"
+
                 id="carousel-prev"
+
                 aria-label="Imagen anterior">
+
+
 
                 <i class="fa-solid fa-arrow-left"></i>
 
+
+
             </button>
+
+
+
 
 
             <!-- FLECHA DERECHA -->
 
+
+
             <button
+
                 class="carousel-arrow carousel-next"
+
                 id="carousel-next"
+
                 aria-label="Siguiente imagen">
 
+
+
                 <i class="fa-solid fa-arrow-right"></i>
+
+
 
             </button>
 
 
+
+
+
             <!-- CONTADOR -->
+
+
 
             <div class="carousel-counter">
 
+
+
                 <span id="carousel-current">01</span>
+
+
 
                 <span class="counter-line"></span>
 
+
+
                 <span>06</span>
+
+
 
             </div>
 
+
+
         </div>
+
+
+
 
 
         <!-- NAVEGACIÓN -->
 
+
+
         <div class="carousel-navigation container">
+
+
 
             <div class="carousel-dots">
 
+
+
                 <button class="carousel-dot active" data-slide="0"></button>
+
+
 
                 <button class="carousel-dot" data-slide="1"></button>
 
+
+
                 <button class="carousel-dot" data-slide="2"></button>
+
+
 
                 <button class="carousel-dot" data-slide="3"></button>
 
+
+
                 <button class="carousel-dot" data-slide="4"></button>
 
+
+
                 <button class="carousel-dot" data-slide="5"></button>
+
+
 
             </div>
 
 
+
+
+
             <span class="carousel-help">
+
                 DESLIZA PARA CONOCER EL ESPACIO
+
             </span>
+
+
 
         </div>
 
+
+
     </div>
+
+
 
 </section>
 
 
+
+<!-- ==========================================
+
+     SECCIÓN: CONOCE NUESTRAS MÁQUINAS
+
+=========================================== -->
+
+
+
+
+
+<section class="machines-section" id="maquinas">
+
+
+
+    <div class="machines-container">
+
+
+
+        <div class="machines-heading">
+
+
+
+            <h2>
+
+                CONOCE NUESTRAS
+
+                <span>MÁQUINAS</span>
+
+            </h2>
+
+
+
+            <p>
+
+                En Estación Fit 19 contamos con máquinas
+
+                y equipo para complementar tus entrenamientos
+
+                de fuerza y acondicionamiento físico.
+
+                ¡Ven a conocer nuestras instalaciones!
+
+            </p>
+
+
+
+        </div>
+
+
+
+        <div class="machines-grid">
+
+
+
+            <!-- IMAGEN 1 -->
+
+            <div class="machine-card">
+
+                <img
+
+                    src="assets/img/maquina-prensa-piernas.webp"
+
+                    alt="Prensa de piernas"
+
+                    loading="lazy">
+
+
+
+                <h3>PRENSA DE PIERNAS</h3>
+
+            </div>
+
+
+
+            <!-- IMAGEN 2 -->
+
+            <div class="machine-card">
+
+                <img
+
+                    src="assets/img/maquina-entrenamiento-piernas.webp"
+
+                    alt="Máquina de entrenamiento de piernas"
+
+                    loading="lazy">
+
+
+
+                <h3>ENTRENAMIENTO DE PIERNAS</h3>
+
+            </div>
+
+
+
+            <!-- IMAGEN 3 -->
+
+            <div class="machine-card">
+
+                <img
+
+                    src="assets/img/maquina-piernas-asiento.webp"
+
+                    alt="Máquina de fuerza"
+
+                    loading="lazy">
+
+
+
+                <h3>EQUIPO DE FUERZA</h3>
+
+            </div>
+
+
+
+            <!-- IMAGEN 4 -->
+
+            <div class="machine-card">
+
+                <img
+
+                    src="assets/img/maquinas-zona-fuerza.webp"
+
+                    alt="Zona de máquinas de Estación Fit 19"
+
+                    loading="lazy">
+
+
+
+                <h3>ZONA DE MÁQUINAS</h3>
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
         <!-- =================================================
+
              HORARIOS Y COSTOS
+
         ================================================== -->
 
+
+
         <section class="schedule section"
+
             id="horarios">
+
+
 
             <div class="container">
 
 
+
+
+
                 <div class="schedule-title">
 
+
+
                     <p class="section-label">
+
                         ELIGE CÓMO ENTRENAR
+
                     </p>
+
+
 
                     <h2 class="section-title">
 
+
+
                         HORARIOS Y
 
+
+
                         <span>
+
                             PLANES
+
                         </span>
+
+
 
                     </h2>
 
+
+
                     <p>
 
+
+
                         Opciones flexibles para que el
+
                         entrenamiento se adapte a ti.
+
+
 
                     </p>
 
+
+
                 </div>
+
+
+
+
 
 
 
                 <div class="schedule-grid">
 
 
+
+
+
                     <!-- HORARIOS -->
+
+
 
                     <div class="schedule-card">
 
 
+
+
+
                         <div class="schedule-heading">
+
+
 
                             <div class="schedule-icon">
 
+
+
                                 <i class="fa-regular fa-clock"></i>
 
+
+
                             </div>
+
+
+
 
 
                             <div>
 
+
+
                                 <span>
+
                                     VEN A ENTRENAR
+
                                 </span>
 
+
+
                                 <h3>
+
                                     HORARIOS
+
                                 </h3>
 
+
+
                             </div>
+
+
 
                         </div>
 
 
 
+
+
+
+
                         <div class="schedule-time">
 
+
+
                             <h4>
+
+
 
                                 <i class="fa-solid fa-calendar-days"></i>
 
+
+
                                 Lunes a viernes
+
+
 
                             </h4>
 
 
+
+
+
                             <div class="time-row">
 
+
+
                                 <span>
+
                                     Mañana
+
                                 </span>
 
+
+
                                 <strong>
+
                                     7:00 a. m. – 1:00 p. m.
+
                                 </strong>
 
+
+
                             </div>
+
+
+
 
 
                             <div class="time-row">
 
+
+
                                 <span>
+
                                     Tarde
+
                                 </span>
 
+
+
                                 <strong>
+
                                     4:00 p. m. – 10:00 p. m.
+
                                 </strong>
 
+
+
                             </div>
+
+
 
                         </div>
 
 
 
+
+
+
+
                         <div class="schedule-time">
+
+
 
                             <h4>
 
+
+
                                 <i class="fa-solid fa-calendar-day"></i>
+
+
 
                                 Sábados
 
+
+
                             </h4>
+
+
+
 
 
                             <div class="time-row">
 
+
+
                                 <span>
+
                                     Horario
+
                                 </span>
 
+
+
                                 <strong>
+
                                     8:30 a. m. – 2:00 p. m.
+
                                 </strong>
+
+
 
                             </div>
 
+
+
                         </div>
+
+
+
 
 
                         <div class="schedule-time">
 
+
+
                             <h4>
+
+
 
                                 <i class="fa-solid fa-calendar-day"></i>
 
+
+
                                 Domingos
+
+
 
                             </h4>
 
 
+
+
+
                             <div class="time-row">
 
+
+
                                 <span>
+
                                     Horario
+
                                 </span>
 
+
+
                                 <strong>
+
                                     Cerrado
+
                                 </strong>
 
+
+
                             </div>
+
+
 
                         </div>
 
 
-                        
+
+
+
+
+
+
 
                     </div>
 
 
 
+
+
+
+
                     <!-- COSTOS -->
+
+
 
                     <div class="schedule-card pricing-card">
 
 
+
+
+
                         <div class="schedule-heading">
+
+
 
                             <div class="schedule-icon">
 
+
+
                                 <i class="fa-solid fa-bolt"></i>
 
+
+
                             </div>
+
+
+
 
 
                             <div>
 
+
+
                                 <span>
+
                                     ELIGE TU PLAN
+
                                 </span>
 
+
+
                                 <h3>
+
                                     COSTOS
+
                                 </h3>
+
+
 
                             </div>
 
+
+
                         </div>
+
+
+
+
 
 
 
                         <ul class="price-list">
 
 
+
+
+
                             <li>
 
+
+
                                 <div>
+
+
 
                                     <i class="fa-solid fa-user-plus"></i>
 
+
+
                                     <span>
+
                                         Inscripción
+
                                     </span>
+
+
 
                                 </div>
 
+
+
                                 <strong>
+
                                     $50
+
                                 </strong>
+
+
 
                             </li>
 
 
 
+
+
+
+
                             <li>
 
+
+
                                 <div>
+
+
 
                                     <i class="fa-solid fa-dumbbell"></i>
 
+
+
                                     <span>
+
                                         Clase
+
                                     </span>
+
+
 
                                 </div>
 
+
+
                                 <strong>
+
                                     $30
+
                                 </strong>
 
+
+
                             </li>
+
+
+
+
 
 
 
                             <li>
 
+
+
                                 <div>
+
+
 
                                     <i class="fa-solid fa-calendar-week"></i>
 
+
+
                                     <span>
+
                                         Semana
+
                                     </span>
+
+
 
                                 </div>
 
+
+
                                 <strong>
+
                                     $100
+
                                 </strong>
 
+
+
                             </li>
+
+
+
+
 
 
 
                             <li class="recommended">
 
+
+
                                 <div>
+
+
 
                                     <i class="fa-solid fa-fire"></i>
 
+
+
                                     <span>
+
                                         Mensualidad
+
                                     </span>
+
+
 
                                 </div>
 
+
+
                                 <strong>
+
                                     $400
+
                                 </strong>
 
+
+
                             </li>
+
+
+
+
 
 
 
                             <li>
 
+
+
                                 <div>
+
+
 
                                     <i class="fa-solid fa-trophy"></i>
 
+
+
                                     <span>
+
                                         Anualidad
+
                                     </span>
+
+
 
                                 </div>
 
+
+
                                 <strong>
+
                                     $3,000
+
                                 </strong>
 
+
+
                             </li>
+
+
+
 
 
                         </ul>
 
 
+
+
+
                         <a
+
                             href="https://wa.me/523314737459?text=Hola%20Estaci%C3%B3n%20Fit%2019,%20quiero%20informaci%C3%B3n%20sobre%20sus%20planes."
+
                             target="_blank"
+
                             rel="noopener noreferrer"
+
                             class="pricing-link">
+
+
 
                             QUIERO ENTRENAR
 
+
+
                             <i class="fa-solid fa-arrow-right"></i>
 
+
+
                         </a>
+
+
 
                     </div>
 
 
+
+
+
                 </div>
 
+
+
             </div>
+
+
 
         </section>
 
 
 
+
+
+
+
         <!-- =================================================
+
              UBICACIÓN
+
         ================================================== -->
 
+
+
         <section class="location section"
+
             id="ubicacion">
+
+
 
             <div class="container location-grid">
 
 
+
+
+
                 <div class="location-content">
 
+
+
                     <p class="section-label">
+
                         CERCA DE TI
+
                     </p>
+
+
+
 
 
                     <h2 class="section-title">
 
+
+
                         TU PUNTO DE
 
+
+
                         <span>
+
                             ENTRENAMIENTO
+
                         </span>
 
+
+
                         EN EL CASTILLO.
+
+
 
                     </h2>
 
 
+
+
+
                     <p class="location-description">
 
+
+
                         No necesitas ir lejos para entrenar.
+
                         Encuentra Estación Fit 19 en
+
                         El Castillo, Jalisco.
 
+
+
                     </p>
+
+
+
+
 
 
 
                     <div class="address-card">
 
+
+
                         <i class="fa-solid fa-location-dot"></i>
+
+
 
                         <div>
 
+
+
                             <small>
+
                                 DIRECCIÓN
+
                             </small>
 
+
+
                             <strong>
+
                                 Av. Jesús García núm. 6
+
                             </strong>
 
-                            <span>
-                                Zona El Castillo
-                            </span>
+
 
                             <span>
-                                San José del Castillo, Jalisco
+
+                                Zona El Castillo
+
                             </span>
+
+
+
+                            <span>
+
+                                San José del Castillo, Jalisco
+
+                            </span>
+
+
 
                         </div>
+
+
 
                     </div>
 
 
 
+
+
+
+
                     <a
+
                         href="https://www.google.com/maps/search/?api=1&query=Jes%C3%BAs+Garc%C3%ADa+6+El+Castillo+45685+San+Jos%C3%A9+del+Castillo+Jalisco"
+
                         target="_blank"
+
                         rel="noopener noreferrer"
+
                         class="btn btn-primary">
+
+
 
                         <i class="fa-solid fa-location-arrow"></i>
 
+
+
                         CÓMO LLEGAR
 
+
+
                     </a>
+
+
 
                 </div>
 
 
 
+
+
+
+
                 <div class="location-photo">
 
+
+
                     <img
+
                         src="assets/img/gym-06.png"
+
                         alt="Estación Fit 19 en El Castillo"
+
                         loading="lazy">
+
+
 
                     <div class="location-photo-info">
 
+
+
                         <i class="fa-solid fa-location-dot"></i>
+
+
 
                         <div>
 
+
+
                             <strong>
+
                                 ESTACIÓN FIT 19
+
                             </strong>
 
+
+
                             <span>
+
                                 El Castillo, Jalisco
+
                             </span>
 
+
                         </div>
+
 
                     </div>
 
@@ -1251,19 +2659,29 @@
 
 
         <!-- =================================================
+
              CONTACTO
+
         ================================================== -->
 
+
+
         <section class="contact"
+
             id="contacto">
+
+
 
             <div class="container contact-inner">
 
 
                 <div>
 
+
                     <p class="section-label">
+
                         DA EL PRIMER PASO
+
                     </p>
 
 
@@ -1271,52 +2689,71 @@
 
                         ¿LISTO PARA
 
-                        <span>
+                       <span>
+
                             EMPEZAR?
+
                         </span>
+
 
                     </h2>
 
-
-                    <p>
+                   <p>
 
                         Escríbenos y solicita información
+
                         sobre entrenamiento, horarios y planes.
 
                     </p>
 
+
                 </div>
-
-
 
                 <div class="contact-actions">
 
                     <a
+
                         href="https://wa.me/523314737459?text=Hola%20Estaci%C3%B3n%20Fit%2019,%20quiero%20comenzar%20a%20entrenar."
+
                         target="_blank"
+
                         rel="noopener noreferrer"
+
                         class="contact-whatsapp">
+
+
 
                         <i class="fa-brands fa-whatsapp"></i>
 
+
+
                         <span>
 
+
+
                             <small>
+
                                 ESCRÍBENOS POR WHATSAPP
+
                             </small>
 
                             331 473 7459
 
                         </span>
 
+
                     </a>
 
-
                     <a
+
                         href="tel:+523314737459"
+
                         class="contact-phone">
 
+
+
                         <i class="fa-solid fa-phone"></i>
+
 
                     </a>
 
@@ -1326,26 +2763,40 @@
 
         </section>
 
-
     </main>
 
 
 
     <!-- =====================================================
+
          WHATSAPP FLOTANTE
+
     ====================================================== -->
 
+
+
     <a
+
         href="https://wa.me/523314737459?text=Hola%20Estaci%C3%B3n%20Fit%2019,%20quisiera%20solicitar%20informaci%C3%B3n."
+
         target="_blank"
+
         rel="noopener noreferrer"
+
         class="whatsapp-floating"
+
         aria-label="Contactar por WhatsApp">
+
+
 
         <i class="fa-brands fa-whatsapp"></i>
 
+
+
         <span>
+
             Escríbenos
+
         </span>
 
     </a>
@@ -1353,18 +2804,29 @@
 
 
     <!-- =====================================================
+
          FOOTER
+
     ====================================================== -->
 
+
+
     <footer class="footer">
+
+
 
         <div class="container footer-main">
 
 
             <div>
 
+
+
                 <a href="#inicio"
+
                     class="footer-logo">
+
+
 
                     ESTACIÓN FIT
 
@@ -1379,24 +2841,28 @@
 
                 </p>
 
-            </div>
 
+
+            </div>
 
 
             <div class="footer-location">
 
+
+
                 <small>
+
                     ENCUÉNTRANOS
+
                 </small>
+
+
 
                 <p>
 
                     Av. Jesús García núm. 6<br>
-
                     El Castillo, Jalisco
-
                 </p>
-
             </div>
 
 
@@ -1404,22 +2870,25 @@
             <div class="footer-social">
 
                 <small>
-                    SÍGUENOS
-                </small>
 
+                    SÍGUENOS
+
+                </small>
 
                 <div>
 
                     <a href="https://www.instagram.com/estacionfit19/"
-                        aria-label="Instagram">
 
+                        aria-label="Instagram">
                         <i class="fa-brands fa-instagram"></i>
 
                     </a>
 
-
                     <a href="https://www.facebook.com/profile.php?id=61595375935604"
+
                         aria-label="Facebook">
+
+
 
                         <i class="fa-brands fa-facebook-f"></i>
 
@@ -1429,23 +2898,21 @@
 
             </div>
 
-
         </div>
-
 
 
         <div class="container footer-bottom">
 
             <p>
-
                 © 2026 Estación Fit 19.
-                Todos los derechos reservados.
 
+                Todos los derechos reservados.
             </p>
 
-
             <p>
+
                 Entrena. Mejora. Supérate.
+
             </p>
 
         </div>
@@ -1453,8 +2920,8 @@
     </footer>
 
 
-
     <script src="js/main.js"></script>
+
 
 </body>
 

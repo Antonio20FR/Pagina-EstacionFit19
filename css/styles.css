@@ -1454,6 +1454,255 @@ button {
 
 }
 
+/*==========================================================
+
+Diseño maquinas
+
+========================================================== */
+
+/* ==========================================
+   ESTACIÓN FIT 19
+   GALERÍA PREMIUM DE MÁQUINAS
+========================================== */
+
+.machines-section {
+    background:
+        radial-gradient(
+            circle at top center,
+            #252525 0%,
+            #111111 45%,
+            #090909 100%
+        );
+    color: #ffffff;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* CONTENEDOR */
+.machines-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ENCABEZADO */
+.machines-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 55px;
+}
+
+.machines-heading h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.machines-heading h2 span {
+    color: #e32b2b;
+}
+
+/* LÍNEA DECORATIVA */
+.machines-heading h2::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background: #e32b2b;
+    margin: 22px auto 0;
+    border-radius: 10px;
+}
+
+.machines-heading p {
+    color: #bdbdbd;
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* GALERÍA */
+.machines-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+/* TARJETAS */
+.machine-card {
+    background: linear-gradient(
+        145deg,
+        #242424,
+        #171717
+    );
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #353535;
+    position: relative;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* EFECTO HOVER */
+.machine-card:hover {
+    transform: translateY(-8px);
+    border-color: #e32b2b;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.55),
+        0 0 25px rgba(227, 43, 43, 0.12);
+}
+
+/* CONTENEDOR VISUAL DE LA IMAGEN */
+.machine-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+
+    background: #141414;
+
+    padding: 12px;
+    box-sizing: border-box;
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+/* ACERCAMIENTO SUAVE */
+.machine-card:hover img {
+    transform: scale(1.025);
+    filter: brightness(1.07);
+}
+
+/* TÍTULOS DE LAS MÁQUINAS */
+.machine-card h3 {
+    margin: 0;
+    padding: 24px 20px;
+
+    background: linear-gradient(
+        90deg,
+        #222222,
+        #171717
+    );
+
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    border-top: 3px solid #e32b2b;
+
+    transition: color 0.3s ease;
+}
+
+/* TÍTULO AL PASAR EL CURSOR */
+.machine-card:hover h3 {
+    color: #ff4747;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+
+    .machines-section {
+        padding: 75px 20px;
+    }
+
+    .machines-grid {
+        gap: 20px;
+    }
+
+    .machine-card img {
+        height: 320px;
+    }
+
+}
+
+/* CELULARES */
+@media (max-width: 768px) {
+
+    .machines-section {
+        padding: 65px 15px;
+    }
+
+    .machines-heading {
+        margin-bottom: 35px;
+    }
+
+    .machines-heading h2 {
+        font-size: clamp(32px, 8vw, 45px);
+    }
+
+    .machines-heading p {
+        font-size: 15px;
+    }
+
+    .machines-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .machine-card {
+        border-radius: 12px;
+    }
+
+    .machine-card img {
+        height: 310px;
+        padding: 10px;
+    }
+
+    .machine-card h3 {
+        padding: 20px 15px;
+        font-size: 16px;
+    }
+
+}
+
+/* PANTALLAS PEQUEÑAS */
+@media (max-width: 400px) {
+
+    .machine-card img {
+        height: 270px;
+    }
+
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+
+    .machine-card,
+    .machine-card img,
+    .machine-card h3 {
+        transition: none;
+    }
+
+    .machine-card:hover {
+        transform: none;
+    }
+
+    .machine-card:hover img {
+        transform: none;
+    }
+
+}
+
 
 /* =========================================================
 
