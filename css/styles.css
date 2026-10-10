@@ -5040,3 +5040,105 @@ body {
         transition: none;
     }
 }
+
+
+/* =========================================================
+   
+   BOTONES FLOTANTES DE REDES SOCIALES
+========================================================= */
+
+/* 1. Contenedor de los botones */
+.social-floating {
+    position: fixed;
+    left: 20px;
+    bottom: 28px;
+    z-index: 990;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 2. Estilo general de los botones */
+.social-floating-btn {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    font-size: 23px;
+    text-decoration: none;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+/* 3. Instagram */
+.social-instagram {
+    background: linear-gradient(
+        135deg,
+        #833ab4,
+        #e1306c,
+        #f77737
+    );
+}
+
+/* 4. Facebook */
+.social-facebook {
+    background: #1877f2;
+}
+
+/* 5. Efecto al pasar el cursor */
+.social-floating-btn:hover {
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* 6. Accesibilidad con teclado */
+.social-floating-btn:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+}
+
+/* =========================================================
+   DISEÑO RESPONSIVO - CELULARES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .social-floating {
+        left: 12px;
+        bottom: 18px;
+        gap: 9px;
+    }
+
+    .social-floating-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        border-radius: 12px;
+    }
+
+}
+
+/* =========================================================
+   ACCESIBILIDAD - REDUCIR ANIMACIONES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .social-floating-btn {
+        transition: none;
+    }
+
+}
