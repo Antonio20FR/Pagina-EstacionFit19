@@ -129,6 +129,255 @@ button {
 
 }
 
+/* =========================================================
+
+ CARRUSEL DE  INICIO
+
+========================================================= */
+
+
+/* CONTENEDOR PRINCIPAL */
+#inicio.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #090909;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+
+    /* Quitar la imagen fija del CSS anterior */
+    background-image: none;
+}
+
+/* CONTENEDOR DE LAS IMÁGENES */
+#inicio .hero-slideshow {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* IMÁGENES DEL CARRUSEL */
+#inicio .hero-slide-bg {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 1.2s ease-in-out,
+        visibility 1.2s ease-in-out;
+}
+
+/* IMAGEN ACTIVA */
+#inicio .hero-slide-bg.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* CAPA OSCURA PARA LEER EL TEXTO */
+#inicio .hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.80),
+            rgba(0, 0, 0, 0.45)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.40),
+            transparent 60%
+        );
+
+    pointer-events: none;
+}
+
+/* CAPAS DEL CSS ORIGINAL */
+#inicio.hero::before {
+    z-index: 1;
+}
+
+#inicio.hero::after {
+    z-index: 2;
+}
+
+/* CONTENIDO DEL INICIO */
+#inicio .hero-content {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+}
+
+/* FLECHA INFERIOR */
+#inicio .scroll-down {
+    position: absolute;
+    z-index: 10;
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+
+    #inicio.hero {
+        min-height: 100svh;
+    }
+
+    #inicio .hero-slide-bg {
+        background-position: center center;
+    }
+
+    #inicio .hero-content {
+        padding: 130px 6% 90px;
+    }
+
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 768px) {
+
+    #inicio.hero {
+        width: 100%;
+        min-height: 100svh;
+        background: #090909;
+        background-image: none;
+    }
+
+    #inicio .hero-slideshow {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    #inicio .hero-slide-bg {
+        width: 100%;
+        height: 100%;
+
+        background-size: cover;
+        background-position: center center;
+
+        opacity: 0;
+    }
+
+    #inicio .hero-slide-bg.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* OSCURECER MÁS EL FONDO EN CELULAR */
+    #inicio .hero-overlay {
+        z-index: 2;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.45) 0%,
+                rgba(0, 0, 0, 0.55) 40%,
+                rgba(0, 0, 0, 0.85) 100%
+            );
+    }
+
+    /* TEXTO ENCIMA DE LAS FOTOS */
+    #inicio .hero-content {
+        position: relative;
+        z-index: 5;
+
+        width: 100%;
+        padding: 125px 6% 100px;
+    }
+
+    #inicio .hero h1 {
+        font-size: clamp(3.5rem, 13vw, 5.5rem);
+        line-height: 0.95;
+    }
+
+    #inicio .hero-tagline {
+        font-size: clamp(1.4rem, 5vw, 2rem);
+        margin-top: 25px;
+    }
+
+    #inicio .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    #inicio .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #inicio .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #inicio .hero-info {
+        margin-top: 30px;
+    }
+
+}
+
+/* ==========================================
+   CELULARES PEQUEÑOS
+========================================== */
+
+@media (max-width: 400px) {
+
+    #inicio .hero-content {
+        padding: 115px 20px 85px;
+    }
+
+    #inicio .hero h1 {
+        font-size: clamp(3rem, 12vw, 4rem);
+    }
+
+    #inicio .hero-slide-bg {
+        background-position: center;
+    }
+
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+
+    #inicio .hero-slide-bg {
+        transition: none;
+    }
+
+}
+
 
 /* =========================================================
 
